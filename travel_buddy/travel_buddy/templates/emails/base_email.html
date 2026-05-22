@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        .message-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        .status-approved { color: #28a745; font-weight: bold; }
+        .status-rejected { color: #dc3545; font-weight: bold; }
+        .status-pending { color: #ffc107; font-weight: bold; }
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✈️ Travel Buddy</h1>
+            <p>Платформа для организации совместных путешествий</p>
+        </div>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 Travel Buddy. Все права защищены.</p>
+            <p>Это автоматическое сообщение, пожалуйста, не отвечайте на него.</p>
+            <p>
+                <a href="http://127.0.0.1:8000/" style="color: #667eea;">На сайт</a> | 
+                <a href="#" style="color: #667eea;">Настройки уведомлений</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

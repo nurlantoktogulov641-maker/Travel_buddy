@@ -3676,3 +3676,965 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 'response_create' is not a valid view function or pattern name.
 "GET /route/14/ HTTP/1.1" 500 228640
+[2026-05-13 11:09:28.434047+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6555
+[2026-05-13 11:10:07.324834+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:54:47.140467+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:54:50.078867+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+[2026-05-13 11:55:02.416888+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:55:05.326060+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 412568
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 412255
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 412392
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 412255
+[2026-05-13 11:56:31.512820+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:56:37.241582+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:56:39.765699+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:56:41.015875+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-13 11:56:52.751250+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+[2026-05-13 11:57:07.906718+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/10/
+[2026-05-13 11:57:22.814228+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:57:29.951272+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:57:34.388363+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/9/
+[2026-05-13 11:57:37.881466+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/9/
+[2026-05-13 11:57:44.394869+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/9/
+[2026-05-13 11:57:46.433181+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/9/
+[2026-05-13 11:57:49.925238+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:57:55.017146+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:58:02.481319+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:58:04.872719+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/9/
+[2026-05-13 11:58:10.687359+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/9/
+[2026-05-13 11:58:46.562192+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:58:55.955153+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 11:59:53.169911+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:00:16.874394+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:00:20.162339+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:00:27.731191+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:00:58.174028+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:01:06.106304+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:01:17.852531+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 12:01:21.001568+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 14:32:13.637834+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 14:32:23.872722+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-13 14:32:36.823071+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+[2026-05-17 09:34:14.194635+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+[2026-05-17 11:08:29.666975+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 93, in route_detail
+    budget_min = route.budget * 0.7
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+"GET /route/20/ HTTP/1.1" 500 83697
+[2026-05-17 11:08:39.062691+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 93, in route_detail
+    budget_min = route.budget * 0.7
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+"GET /route/20/ HTTP/1.1" 500 83697
+[2026-05-17 11:08:50.384560+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 93, in route_detail
+    budget_min = route.budget * 0.7
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+"GET /route/20/ HTTP/1.1" 500 83697
+[2026-05-17 11:08:55.809606+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:09:03.264608+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 93, in route_detail
+    budget_min = route.budget * 0.7
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+"GET /route/20/ HTTP/1.1" 500 83488
+[2026-05-17 11:09:07.857272+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 93, in route_detail
+    budget_min = route.budget * 0.7
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+"GET /route/16/ HTTP/1.1" 500 83313
+[2026-05-17 11:11:58.923559+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/16/ HTTP/1.1" 500 84099
+[2026-05-17 11:11:59.829243+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/16/ HTTP/1.1" 500 84099
+[2026-05-17 11:12:00.270068+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/16/ HTTP/1.1" 500 84099
+[2026-05-17 11:12:00.503254+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/16/ HTTP/1.1" 500 84099
+[2026-05-17 11:12:00.638529+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/16/ HTTP/1.1" 500 84099
+[2026-05-17 11:12:03.740311+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/15/ HTTP/1.1" 500 84024
+[2026-05-17 11:12:06.117371+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 105, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/20/ HTTP/1.1" 500 84076
+[2026-05-17 11:13:54.107389+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:13:55.533347+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 106, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/20/ HTTP/1.1" 500 84243
+[2026-05-17 11:13:57.189770+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+Internal Server Error: /route/20/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 106, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/20/ HTTP/1.1" 500 84380
+[2026-05-17 11:13:59.604195+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 106, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/15/ HTTP/1.1" 500 84190
+[2026-05-17 11:14:01.212279+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 106, in route_detail
+    start_date__gte=route.start_date - date.timedelta(days=30),
+AttributeError: type object 'datetime.date' has no attribute 'timedelta'
+"GET /route/15/ HTTP/1.1" 500 84327
+[2026-05-17 11:18:03.647038+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 162, in route_detail
+    return render(request, 'routes/detail.html', {
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 'response_create' is not a valid view function or pattern name.
+"GET /route/15/ HTTP/1.1" 500 240854
+[2026-05-17 11:18:04.921055+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 162, in route_detail
+    return render(request, 'routes/detail.html', {
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 'response_create' is not a valid view function or pattern name.
+"GET /route/15/ HTTP/1.1" 500 240854
+[2026-05-17 11:18:09.908984+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+Internal Server Error: /route/15/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 162, in route_detail
+    return render(request, 'routes/detail.html', {
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 'response_create' is not a valid view function or pattern name.
+"GET /route/15/ HTTP/1.1" 500 240717
+[2026-05-17 11:18:12.508463+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:18:21.506255+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:18:22.240498+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:18:23.459045+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+Internal Server Error: /route/16/
+Traceback (most recent call last):
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\travel_buddy\routes\views.py", line 162, in route_detail
+    return render(request, 'routes/detail.html', {
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 1018, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Nurlan\travel_buddy_project\.venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 'response_create' is not a valid view function or pattern name.
+"GET /route/16/ HTTP/1.1" 500 237443
+[2026-05-17 11:24:58.727716+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+[2026-05-17 11:25:15.228446+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр участников маршрута | URL: /route/16/participants/
+[2026-05-17 11:25:20.425817+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+[2026-05-17 11:25:55.455975+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 11:26:08.636615+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 11:26:08.707303+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 11:26:40.356408+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-17 11:26:50.193335+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Редактирование профиля | URL: /users/profile/1/edit/
+[2026-05-17 11:26:56.891599+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Редактирование профиля | URL: /users/profile/1/edit/
+[2026-05-17 11:27:19.770393+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:27:27.506446+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 11:27:49.184168+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-17 11:27:56.178925+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-17 11:27:56.180796+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:27:56.276019+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 11:27:59.445746+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 11:27:59.494194+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 11:28:05.026028+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 11:28:05.464579+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:28:09.648788+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 11:28:20.002727+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:28:23.868456+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-17 11:32:47.793579+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-17 11:32:48.546218+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 11:33:08.230262+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 11:33:14.120299+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:33:17.795188+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:33:21.214750+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:33:26.332969+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:33:37.208640+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/8/
+[2026-05-17 11:33:44.672163+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/8/
+[2026-05-17 11:33:44.696872+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/8/
+[2026-05-17 11:33:58.305561+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:34:18.304035+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:34:22.866482+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр участников маршрута | URL: /route/8/participants/
+[2026-05-17 11:34:27.437839+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:45:56.364208+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/8/edit/
+[2026-05-17 11:47:16.626813+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/8/edit/
+[2026-05-17 11:47:16.665571+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:49:30.354840+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:49:48.392411+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:49:55.932779+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/8/edit/
+[2026-05-17 11:50:18.696504+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/8/edit/
+[2026-05-17 11:50:18.730822+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:50:57.583591+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/8/edit/
+[2026-05-17 11:51:21.825080+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 11:51:28.135651+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 11:51:29.713326+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 11:51:43.872960+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/21/edit/
+[2026-05-17 11:52:11.897179+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Редактирование маршрута | URL: /route/21/edit/
+[2026-05-17 11:52:11.919285+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 11:55:55.638681+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 11:56:49.562627+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 12:02:25.529964+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 12:02:40.432323+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 12:05:56.475224+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 12:06:01.772969+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 12:06:27.401517+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 12:06:34.148624+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 12:06:42.765575+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:06:45.656456+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:06:48.338365+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:06:50.264578+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-17 12:06:53.372788+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Добавление в избранное | URL: /favorites/add/4/
+[2026-05-17 12:06:53.389429+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-17 12:06:59.972026+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Добавление в избранное | URL: /favorites/add/4/
+[2026-05-17 12:06:59.989609+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-17 12:07:04.130874+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-17 12:07:16.117605+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-17 12:07:26.571376+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:07:40.666131+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-17 12:07:46.066511+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/21/
+[2026-05-17 12:07:51.390579+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:10:18.578728+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:11:55.467811+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:11:56.371434+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:11:56.573922+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:11:56.741044+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:12:01.124296+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:12:32.953652+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:12:38.768644+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:12:41.544217+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+[2026-05-17 12:12:47.680614+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/15/
+[2026-05-17 12:12:49.119184+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-17 12:12:53.306932+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-17 12:12:53.342120+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-17 12:12:57.238930+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-17 12:12:57.253780+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:12:57.319214+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 12:12:59.472078+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 12:12:59.535467+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 12:13:03.670592+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-17 12:13:04.121612+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:13:08.750934+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:14:29.336144+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:14:33.688732+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:14:34.040990+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:14:34.421114+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:14:34.578577+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:17:48.458536+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:17:50.251209+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:17:55.117368+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-17 12:17:57.881002+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:18:00.822465+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:18:00.840476+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/1/
+[2026-05-17 12:18:16.438415+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:18:17.390754+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:18:20.407622+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/13/
+[2026-05-17 12:18:37.331476+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+[2026-05-17 12:18:40.326068+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+[2026-05-17 12:18:45.082910+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:18:48.345304+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:18:50.440863+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-17 12:18:53.629616+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+[2026-05-17 12:18:59.610732+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Отклик на маршрут | URL: /responses/create/10/
+[2026-05-17 12:18:59.629278+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+[2026-05-17 12:19:03.578270+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр участников маршрута | URL: /route/10/participants/
+[2026-05-17 12:19:05.528013+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+[2026-05-17 12:19:08.489989+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/10/
+[2026-05-17 12:19:16.399018+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
+[2026-05-17 12:19:21.810887+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/9/
+[2026-05-17 12:19:35.843284+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/7/

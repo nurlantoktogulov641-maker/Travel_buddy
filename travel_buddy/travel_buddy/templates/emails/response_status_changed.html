@@ -1,0 +1,32 @@
+{% extends 'emails/base_email.html' %}
+
+{% block content %}
+<h2>Здравствуйте, {{ response.user.username }}!</h2>
+
+{% if new_status == 'ACCEPTED' %}
+    <p>🎉 <strong>Поздравляем!</strong> Ваш отклик на маршрут <strong>«{{ route.title }}»</strong> был <span class="status-approved">ПРИНЯТ</span>!</p>
+    
+    <div style="background-color: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0;">
+        <p style="margin: 0; color: #155724;">✅ Вы теперь участник этого путешествия! Вам доступен чат для обсуждения деталей с другими участниками.</p>
+    </div>
+    
+    <center>
+        <a href="http://127.0.0.1:8000/chat/{{ route.id }}/" class="button">
+            💬 Перейти в чат
+        </a>
+    </center>
+
+{% elif new_status == 'REJECTED' %}
+    <p>❌ К сожалению, ваш отклик на маршрут <strong>«{{ route.title }}»</strong> был <span class="status-rejected">ОТКЛОНЁН</span>.</p>
+    
+    <div style="background-color: #f8d7da; padding: 15px; border-radius: 8px; margin: 20px 0;">
+        <p style="margin: 0; color: #721c24;">Не расстраивайтесь! Посмотрите другие интересные маршруты.</p>
+    </div>
+    
+    <center>
+        <a href="http://127.0.0.1:8000/" class="button">
+            🔍 Найти другие маршруты
+        </a>
+    </center>
+{% endif %}
+{% endblock %}

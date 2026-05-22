@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-md-8">
             <div class="card auth-card">
                 <div class="card-body">
@@ -67,6 +68,36 @@
                 </div>
             </div>
             
+            <!-- ===== УРОВЕНЬ ДОВЕРИЯ ===== -->
+            <div class="card auth-card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-shield-alt"></i> 🎯 Уровень доверия
+                    </h5>
+                    <div class="progress mb-2" style="height: 30px;">
+                        <div class="progress-bar bg-success" 
+                             role="progressbar" 
+                             style="width: {{ profile_user.trust_level }}0%;" 
+                             aria-valuenow="{{ profile_user.trust_level }}" 
+                             aria-valuemin="1" 
+                             aria-valuemax="10">
+                            {{ profile_user.trust_level }}/10
+                        </div>
+                    </div>
+                    <p class="mb-1">
+                        <strong>{{ profile_user.get_trust_level_display }}</strong>
+                    </p>
+                    <small class="text-muted">
+                        <i class="fas fa-suitcase"></i> 
+                        {% if profile_user.total_completed_trips > 0 %}
+                            🎒 {{ profile_user.total_completed_trips }} завершённых поездок
+                        {% else %}
+                            🎒 Пока нет завершённых поездок
+                        {% endif %}
+                    </small>
+                </div>
+            </div>
+
             <div class="card auth-card mt-4">
                 <div class="card-body">
                     <h4>🗺️ Маршруты пользователя</h4>

@@ -69,41 +69,74 @@
             </div>
             
             <!-- ЯНДЕКС.КАРТА С МАРШРУТОМ -->
-            <div class="info-box mb-4">
-                <h5>🗺️ Карта маршрута (Яндекс)</h5>
-                <div id="yandexMap" style="height: 500px; border-radius: 15px;"></div>
-                
-                {% if route.waypoints %}
-                <div class="mt-3">
-                    <strong>📌 Промежуточные точки:</strong>
-                    <ul class="mt-2">
-                        {% for point in route.waypoints.split %}
-                            <li>{{ point }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-                
-                {% if route.places %}
-                <div class="mt-3">
-                    <strong>⭐ Достопримечательности:</strong>
-                    <ul class="mt-2">
-                        {% for place in route.places %}
-                            <li>{{ place.name }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
+<div class="info-box mb-4">
+    <h5>🗺️ Карта маршрута</h5>
+    
+    {% if route.start_city or route.end_city %}
+        <div id="yandexMap" style="height: 500px; border-radius: 15px;"></div>
+        
+        <div id="routeInfo" class="mt-3" style="display: none;">
+            <div class="alert alert-info">
+                <strong>📊 Информация о маршруте:</strong>
+                <span id="distanceInfo"></span>
+                <span id="timeInfo"></span>
             </div>
-
-            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-            <script>
-                ymaps.ready(init);
+        </div>
+        
+        <div id="mapError" class="alert alert-warning mt-3" style="display: none;">
+            ⚠️ Не удалось загрузить карту. Проверьте подключение к интернету.
+        </div>
+        
+        {% if route.waypoints %}
+        <div class="mt-3">
+            <strong>📌 Промежуточные точки:</strong>
+            <ul class="mt-2">
+                {% for point in route.waypoints.split %}
+                    <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if route.places %}
+        <div class="mt-3">
+            <strong>⭐ Достопримечательности:</strong>
+            <ul class="mt-2">
+                {% for place in route.places %}
+                    <li>{{ place.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+        <script>
+            // Функция для экранирования HTML
+            function escapeHtml(text) {
+                if (!text) return '';
+                var div = document.createElement('div');
+                div.appendChild(document.createTextNode(text));
+                return div.innerHTML;
+            }
+            
+            // Таймер для проверки загрузки карты
+            var mapLoadTimeout = setTimeout(function() {
+                var mapDiv = document.getElementById('yandexMap');
+                if (mapDiv && mapDiv.innerHTML === '') {
+                    document.getElementById('mapError').style.display = 'block';
+                }
+            }, 10000);
+            
+            ymaps.ready(init);
+            
+            function init() {
+                clearTimeout(mapLoadTimeout);
                 
-                function init() {
+                try {
                     var map = new ymaps.Map("yandexMap", {
                         center: [55.76, 37.64],
-                        zoom: 4
+                        zoom: 4,
+                        controls: ['zoomControl', 'fullscreenControl']
                     });
                     
                     // СБОР ВСЕХ ТОЧЕК ДЛЯ МАРШРУТА
@@ -111,7 +144,7 @@
                     
                     // Город отправления
                     {% if route.start_city %}
-                        routePoints.push("{{ route.start_city }}");
+                        routePoints.push(escapeHtml("{{ route.start_city }}"));
                     {% endif %}
                     
                     // Промежуточные точки
@@ -119,31 +152,45 @@
                         var waypointsList = "{{ route.waypoints }}".split(',');
                         for (var i = 0; i < waypointsList.length; i++) {
                             var point = waypointsList[i].trim();
-                            if (point) routePoints.push(point);
+                            if (point) routePoints.push(escapeHtml(point));
                         }
                     {% endif %}
                     
                     // Город назначения
                     {% if route.end_city %}
-                        routePoints.push("{{ route.end_city }}");
+                        routePoints.push(escapeHtml("{{ route.end_city }}"));
                     {% endif %}
                     
-                    // ПОСТРОЕНИЕ МАРШРУТА
+                    // ПОСТРОЕНИЕ МАРШРУТА С РАССТОЯНИЕМ
                     if (routePoints.length >= 2) {
                         var geoCodes = [];
                         var promises = [];
+                        var placemarks = [];
                         
-                        routePoints.forEach(function(point) {
-                            var promise = ymaps.geocode(point);
+                        routePoints.forEach(function(point, index) {
+                            var promise = ymaps.geocode(point, { results: 1 });
                             promises.push(promise);
                             promise.then(function(res) {
-                                var coords = res.geoObjects.get(0).geometry.getCoordinates();
-                                geoCodes.push(coords);
-                                // Маркер города
-                                var placemark = new ymaps.Placemark(coords, {
-                                    balloonContent: point
-                                });
-                                map.geoObjects.add(placemark);
+                                var geoObject = res.geoObjects.get(0);
+                                if (geoObject) {
+                                    var coords = geoObject.geometry.getCoordinates();
+                                    geoCodes.push(coords);
+                                    
+                                    // Маркер города с разными цветами
+                                    var preset = 'islands#blueTourismIcon';
+                                    if (index === 0) preset = 'islands#greenTourismIcon';
+                                    if (index === routePoints.length - 1) preset = 'islands#redTourismIcon';
+                                    
+                                    var placemark = new ymaps.Placemark(coords, {
+                                        balloonContent: '<b>' + point + '</b>'
+                                    }, {
+                                        preset: preset
+                                    });
+                                    map.geoObjects.add(placemark);
+                                    placemarks.push(placemark);
+                                }
+                            }).catch(function(error) {
+                                console.error('Ошибка геокодирования для ' + point + ':', error);
                             });
                         });
                         
@@ -152,84 +199,116 @@
                                 var multiRoute = new ymaps.multiRouter.MultiRoute({
                                     referencePoints: geoCodes,
                                     params: { routingMode: 'auto' }
-                                }, { boundsAutoApply: true });
+                                }, { 
+                                    boundsAutoApply: true,
+                                    wayPointVisible: false
+                                });
+                                
+                                // Получение информации о маршруте
+                                multiRoute.model.events.add("requestsuccess", function() {
+                                    var routes = multiRoute.getActiveRoute();
+                                    if (routes) {
+                                        var distance = routes.getLength();
+                                        var time = routes.getTime();
+                                        
+                                        var distanceKm = (distance / 1000).toFixed(1);
+                                        var timeHours = Math.floor(time / 60);
+                                        var timeMinutes = time % 60;
+                                        
+                                        var routeInfoDiv = document.getElementById('routeInfo');
+                                        if (routeInfoDiv) {
+                                            routeInfoDiv.style.display = 'block';
+                                            document.getElementById('distanceInfo').innerHTML = ' 📍 Расстояние: ' + distanceKm + ' км';
+                                            document.getElementById('timeInfo').innerHTML = ' ⏱️ Время в пути: ' + timeHours + ' ч ' + timeMinutes + ' мин';
+                                        }
+                                    }
+                                });
+                                
+                                multiRoute.model.events.add("requesterror", function() {
+                                    console.error('Ошибка построения маршрута');
+                                });
+                                
                                 map.geoObjects.add(multiRoute);
+                            } else {
+                                document.getElementById('mapError').innerHTML = '⚠️ Недостаточно точек для построения маршрута. Укажите начальный и конечный город.';
+                                document.getElementById('mapError').style.display = 'block';
                             }
                         });
+                    } else {
+                        document.getElementById('mapError').innerHTML = '⚠️ Укажите хотя бы начальный и конечный город для отображения маршрута.';
+                        document.getElementById('mapError').style.display = 'block';
                     }
                     
                     // ДОСТОПРИМЕЧАТЕЛЬНОСТИ (красные маркеры)
                     {% if route.places %}
                         var places = {{ route.places|safe }};
-                        places.forEach(function(place) {
-                            if (place.lat && place.lng) {
-                                var placemark = new ymaps.Placemark([place.lat, place.lng], {
-                                    balloonContent: '<b>' + place.name + '</b>'
-                                }, {
-                                    preset: 'islands#redDotIcon'
-                                });
-                                map.geoObjects.add(placemark);
-                            } else if (place.name) {
-                                ymaps.geocode(place.name).then(function(res) {
-                                    var coords = res.geoObjects.get(0).geometry.getCoordinates();
-                                    var placemark = new ymaps.Placemark(coords, {
-                                        balloonContent: '<b>' + place.name + '</b>'
+                        if (places && places.length) {
+                            places.forEach(function(place) {
+                                if (place.lat && place.lng) {
+                                    var placemark = new ymaps.Placemark([parseFloat(place.lat), parseFloat(place.lng)], {
+                                        balloonContent: '<b>' + escapeHtml(place.name) + '</b>'
                                     }, {
                                         preset: 'islands#redDotIcon'
                                     });
                                     map.geoObjects.add(placemark);
-                                });
-                            }
-                        });
+                                } else if (place.name) {
+                                    ymaps.geocode(escapeHtml(place.name), { results: 1 }).then(function(res) {
+                                        var geoObject = res.geoObjects.get(0);
+                                        if (geoObject) {
+                                            var coords = geoObject.geometry.getCoordinates();
+                                            var placemark = new ymaps.Placemark(coords, {
+                                                balloonContent: '<b>' + escapeHtml(place.name) + '</b>'
+                                            }, {
+                                                preset: 'islands#redDotIcon'
+                                            });
+                                            map.geoObjects.add(placemark);
+                                        }
+                                    });
+                                }
+                            });
+                        }
                     {% endif %}
+                    
+                    // Если нет маршрутов, показываем центр России
+                    if (geoCodes.length === 0 && (!places || places.length === 0)) {
+                        map.setCenter([55.76, 37.64], 4);
+                    }
+                    
+                } catch (error) {
+                    console.error('Ошибка инициализации карты:', error);
+                    document.getElementById('mapError').style.display = 'block';
                 }
-            </script>
+            }
+        </script>
+    {% else %}
+        <div class="alert alert-secondary">
+            <i class="bi bi-geo-alt"></i> Для отображения карты укажите город отправления и назначения при создании маршрута.
+        </div>
+    {% endif %}
+</div>
             
-            <!-- Похожие маршруты -->
-            {% if similar_routes %}
-            <div class="card mt-4">
-                <div class="card-header bg-info text-white">
-                    <h5>🔍 Похожие маршруты</h5>
-                </div>
-                <div class="card-body">
-                    {% for similar in similar_routes %}
-                        <div class="mb-2">
-                            <a href="{% url 'route_detail' similar.id %}">{{ similar.title }}</a>
-                            <span class="text-muted">({{ similar.countries }})</span>
+            <!-- НЕДАВНО ПРОСМОТРЕННЫЕ (перемещено внутрь) -->
+            {% if recent_routes %}
+            <div class="mt-5">
+                <h3>🕐 Недавно просмотренные</h3>
+                <div class="row">
+                    {% for recent_route in recent_routes|slice:":4" %}
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            {% if recent_route.image %}
+                                <img src="{{ recent_route.image.url }}" class="card-img-top" alt="{{ recent_route.title }}" style="height: 120px; object-fit: cover;">
+                            {% endif %}
+                            <div class="card-body">
+                                <h6 class="card-title">{{ recent_route.title|truncatechars:30 }}</h6>
+                                <small class="text-muted">{{ recent_route.budget }} ₽</small>
+                                <a href="{% url 'route_detail' recent_route.id %}" class="btn btn-sm btn-outline-primary mt-2">Смотреть</a>
+                            </div>
                         </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
             {% endif %}
-            
-            <!-- КОММЕНТАРИИ -->
-            <div class="card mt-4">
-                <div class="card-header bg-secondary text-white">
-                    <h5 class="mb-0">💬 Комментарии ({{ comments|length }})</h5>
-                </div>
-                <div class="card-body">
-                    {% for comment in comments %}
-                        <div class="border-bottom pb-2 mb-2">
-                            <strong>{{ comment.author.username }}</strong>
-                            <small class="text-muted">{{ comment.created_at|date:"d.m.Y H:i" }}</small>
-                            <p class="mt-1">{{ comment.text }}</p>
-                        </div>
-                    {% empty %}
-                        <p class="text-muted">Нет комментариев. Будьте первым!</p>
-                    {% endfor %}
-                    
-                    {% if user.is_authenticated %}
-                        <form method="post" class="mt-3">
-                            {% csrf_token %}
-                            {{ comment_form }}
-                            <input type="hidden" name="comment_text" value="1">
-                            <button type="submit" class="btn btn-primary mt-2">Отправить комментарий</button>
-                        </form>
-                    {% else %}
-                        <p class="text-muted mt-3"><a href="{% url 'login' %}">Войдите</a>, чтобы оставить комментарий.</p>
-                    {% endif %}
-                </div>
-            </div>
             
             <!-- КНОПКИ -->
             <div class="d-flex gap-3 flex-wrap mt-4">

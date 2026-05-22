@@ -1,0 +1,272 @@
+/* dark-theme.css - Тёмная тема для Travel Buddy */
+
+/* Глобальные переменные */
+.dark-theme {
+    --bg-dark: #1a1a2e;
+    --card-dark: #16213e;
+    --text-light: #eeeeee;
+    --text-gray: #aaaaaa;
+    --border-dark: #2a2a4a;
+    --primary-color: #667eea;
+    --primary-hover: #5a67d8;
+    --danger-color: #e53e3e;
+    --success-color: #38a169;
+    --warning-color: #f59e0b;
+}
+
+/* Основной фон */
+.dark-theme body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* Карточки */
+.dark-theme .card,
+.dark-theme .auth-card,
+.dark-theme .navbar,
+.dark-theme .modal-content,
+.dark-theme .dropdown-menu {
+    background-color: var(--card-dark) !important;
+    border-color: var(--border-dark) !important;
+}
+
+/* Текст в карточках */
+.dark-theme .card-body,
+.dark-theme .card-title,
+.dark-theme .navbar-brand,
+.dark-theme .nav-link,
+.dark-theme .dropdown-item {
+    color: var(--text-light) !important;
+}
+
+/* Вспомогательный текст */
+.dark-theme .text-muted,
+.dark-theme small,
+.dark-theme .card-text,
+.dark-theme .form-text {
+    color: var(--text-gray) !important;
+}
+
+/* Границы */
+.dark-theme .border-bottom,
+.dark-theme .border-top,
+.dark-theme .border-start,
+.dark-theme .border-end,
+.dark-theme hr {
+    border-color: var(--border-dark) !important;
+}
+
+/* Кнопки */
+.dark-theme .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.dark-theme .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.dark-theme .btn-outline-secondary {
+    color: var(--text-gray);
+    border-color: var(--border-dark);
+}
+
+.dark-theme .btn-outline-secondary:hover {
+    background-color: var(--border-dark);
+    color: var(--text-light);
+}
+
+/* Формы */
+.dark-theme .form-control,
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select {
+    background-color: #0f0f23;
+    border-color: var(--border-dark);
+    color: var(--text-light);
+}
+
+.dark-theme .form-control:focus,
+.dark-theme input:focus,
+.dark-theme textarea:focus {
+    background-color: #1a1a3e;
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Прогресс-бар */
+.dark-theme .progress {
+    background-color: #2a2a4a;
+}
+
+.dark-theme .progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Бейджи */
+.dark-theme .badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: #1a1a2e !important;
+}
+
+.dark-theme .badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.dark-theme .badge.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+.dark-theme .badge.bg-info {
+    background-color: #3182ce !important;
+}
+
+/* Ссылки */
+.dark-theme a:not(.btn) {
+    color: var(--primary-color);
+}
+
+.dark-theme a:not(.btn):hover {
+    color: var(--primary-hover);
+}
+
+/* Сообщения (alerts) */
+.dark-theme .alert-success {
+    background-color: #2d4a3a;
+    border-color: #38a169;
+    color: #c6f6d5;
+}
+
+.dark-theme .alert-danger {
+    background-color: #742a2a;
+    border-color: #e53e3e;
+    color: #fed7d7;
+}
+
+.dark-theme .alert-warning {
+    background-color: #744f2a;
+    border-color: #f59e0b;
+    color: #fef3c7;
+}
+
+.dark-theme .alert-info {
+    background-color: #2a4a74;
+    border-color: #3182ce;
+    color: #d1e8ff;
+}
+
+/* Пагинация */
+.dark-theme .pagination .page-link {
+    background-color: var(--card-dark);
+    border-color: var(--border-dark);
+    color: var(--text-light);
+}
+
+.dark-theme .pagination .page-link:hover {
+    background-color: var(--border-dark);
+}
+
+.dark-theme .pagination .active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Модальные окна */
+.dark-theme .modal-header,
+.dark-theme .modal-footer {
+    border-color: var(--border-dark);
+}
+
+/* Чат */
+.dark-theme .chat-message {
+    background-color: #0f0f23;
+}
+
+.dark-theme .chat-message.sent {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Таблицы */
+.dark-theme .table {
+    color: var(--text-light);
+}
+
+.dark-theme .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .table-bordered,
+.dark-theme .table-bordered td,
+.dark-theme .table-bordered th {
+    border-color: var(--border-dark);
+}
+/* ===== СТИЛИ ДЛЯ ЧАТА В ТЁМНОЙ ТЕМЕ ===== */
+.dark-theme .chat-container {
+    background-color: #1a1a2e;
+}
+
+.dark-theme .chat-message {
+    background-color: #16213e;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+.dark-theme .chat-message.sent {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.dark-theme .chat-message.received {
+    background-color: #2a2a3e;
+    color: #e0e0e0;
+}
+
+.dark-theme .chat-message .message-text {
+    color: inherit;
+}
+
+.dark-theme .chat-message .message-time {
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.dark-theme .chat-input {
+    background-color: #0f0f23;
+    border: 1px solid #2a2a4a;
+    color: #e0e0e0;
+    border-radius: 25px;
+    padding: 10px 15px;
+}
+
+.dark-theme .chat-input:focus {
+    background-color: #1a1a3e;
+    border-color: #667eea;
+    color: white;
+}
+
+.dark-theme .chat-header {
+    background: linear-gradient(135deg, #16213e, #0f0f23);
+    border-bottom: 1px solid #2a2a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme .chat-list-item {
+    background-color: #16213e;
+    border-bottom: 1px solid #2a2a4a;
+    color: #e0e0e0;
+}
+
+.dark-theme .chat-list-item:hover {
+    background-color: #1a1a3e;
+}
+
+.dark-theme .unread-badge {
+    background-color: #667eea;
+    color: white;
+}

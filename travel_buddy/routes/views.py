@@ -3,12 +3,17 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Count, Q
+from django.views.decorators.cache import never_cache
+from datetime import date, timedelta
+from itertools import chain
+
 from .models import Route, Tag, RouteImage, Favorite, RouteComment, RouteLike
 from responses.models import Response
 from reviews.models import Review
 from .forms import RouteForm, CommentForm
 from travel_buddy.utils import log_action
 from .utils import generate_route_pdf
+from travel_buddy.utils import notify_new_response, notify_response_status_changed
 
 
 @log_action('Просмотр главной страницы')
@@ -58,12 +63,14 @@ def home(request):
     })
 
 
+@never_cache
 @log_action('Просмотр маршрута')
 def route_detail(request, route_id):
     route = get_object_or_404(Route, id=route_id)
     route.views_count += 1
     route.save()
     
+    # ===== ОТКЛИК ПОЛЬЗОВАТЕЛЯ =====
     user_response = None
     if request.user.is_authenticated:
         user_response = Response.objects.filter(route=route, user=request.user).first()
@@ -71,12 +78,68 @@ def route_detail(request, route_id):
     responses = Response.objects.filter(route=route).order_by('-created_at')
     reviews = Review.objects.filter(route=route).order_by('-created_at')
     
-    similar_routes = Route.objects.filter(
-        status='ACTIVE',
+    # ===== УЛУЧШЕННЫЕ ПОХОЖИЕ МАРШРУТЫ =====
+    similar_routes_base = Route.objects.filter(
+        status='ACTIVE'
+    ).exclude(id=route.id)
+
+    # 1. По тегам (основной критерий)
+    similar_by_tags = similar_routes_base.filter(
         tags__in=route.tags.all()
-    ).exclude(id=route.id).distinct()[:5]
+    ).distinct()
+
+    # 2. По бюджету (±30%) - ИСПРАВЛЕНО
+    if route.budget:
+        budget_value = float(route.budget)
+        budget_min = budget_value * 0.7
+        budget_max = budget_value * 1.3
+        similar_by_budget = similar_routes_base.filter(
+            budget__gte=budget_min,
+            budget__lte=budget_max
+        )
+    else:
+        similar_by_budget = Route.objects.none()
+
+    # 3. По датам (близкие даты ±30 дней)
+    if route.start_date:
+        similar_by_dates = similar_routes_base.filter(
+        start_date__gte=route.start_date - timedelta(days=30),
+        start_date__lte=route.start_date + timedelta(days=30)
+    )
+    else:
+        similar_by_dates = Route.objects.none()
+
+    # Объединяем и убираем дубликаты
+    similar_combined = list(chain(similar_by_tags, similar_by_budget, similar_by_dates))
+    seen_ids = set()
+    unique_similar = []
+    for r in similar_combined:
+        if r.id not in seen_ids:
+            seen_ids.add(r.id)
+            unique_similar.append(r)
+
+    similar_routes_result = unique_similar[:5]
     
-    # Комментарии
+    # ===== ИСТОРИЯ ПРОСМОТРОВ =====
+    viewed_routes = request.session.get('viewed_routes', [])
+    
+    if route_id in viewed_routes:
+        viewed_routes.remove(route_id)
+    
+    viewed_routes.insert(0, route_id)
+    
+    if len(viewed_routes) > 10:
+        viewed_routes = viewed_routes[:10]
+    
+    request.session['viewed_routes'] = viewed_routes
+    
+    # Получаем объекты маршрутов из истории
+    recent_routes = []
+    if viewed_routes:
+        recent_routes_qs = Route.objects.filter(id__in=viewed_routes, status='ACTIVE')
+        recent_routes = sorted(recent_routes_qs, key=lambda x: viewed_routes.index(x.id))
+    
+    # ===== КОММЕНТАРИИ =====
     comments = RouteComment.objects.filter(route=route).order_by('-created_at')
     
     if request.method == 'POST' and 'comment_text' in request.POST:
@@ -101,7 +164,8 @@ def route_detail(request, route_id):
         'user_response': user_response,
         'responses': responses,
         'reviews': reviews,
-        'similar_routes': similar_routes,
+        'similar_routes': similar_routes_result,
+        'recent_routes': recent_routes,
         'comments': comments,
         'comment_form': form,
     })

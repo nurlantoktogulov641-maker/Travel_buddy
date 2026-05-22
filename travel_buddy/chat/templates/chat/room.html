@@ -1,38 +1,38 @@
 {% extends 'base.html' %}
 
-{% block title %}Чат - Travel Buddy{% endblock %}
-
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="mb-0">💬 Чат: {{ route.title }}</h4>
-            </div>
-            <div class="card-body" style="height: 400px; overflow-y: scroll;">
-                {% for msg in messages %}
-                    <div class="mb-3">
-                        <strong>{{ msg.sender.username }}</strong>
-                        <p class="mb-1">{{ msg.text }}</p>
-                        <small class="text-muted">{{ msg.created_at|date:"H:i" }}</small>
-                    </div>
-                {% empty %}
-                    <p class="text-muted text-center">Нет сообщений. Напишите первое!</p>
-                {% endfor %}
-            </div>
-            <div class="card-footer">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input type="text" name="text" class="form-control" placeholder="Сообщение..." required>
-                        <button type="submit" class="btn btn-primary">Отпр.</button>
-                    </div>
-                </form>
-            </div>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">💬 Чат маршрута: {{ route.title }}</h5>
         </div>
-        <div class="text-center mt-3">
-            <a href="{% url 'route_detail' route.id %}" class="btn btn-secondary">← Назад к маршруту</a>
+        <div class="card-body" style="height: 500px; overflow-y: auto;" id="chatMessages">
+            {% for message in messages %}
+                <div class="message {% if message.sender == user %}message-sent{% else %}message-received{% endif %}">
+                    <strong>{{ message.sender.username }}</strong>
+                    <p class="mb-1">{{ message.text }}</p>
+                    <small class="time">{{ message.created_at|date:"d.m.Y H:i" }}</small>
+                </div>
+            {% empty %}
+                <p class="text-center text-muted">Нет сообщений. Напишите первым!</p>
+            {% endfor %}
+        </div>
+        <div class="card-footer">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="text" class="form-control" placeholder="Введите сообщение..." required>
+                    <button class="btn btn-primary" type="submit">Отправить</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+<script>
+    var chatMessages = document.getElementById('chatMessages');
+    if (chatMessages) {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
 {% endblock %}

@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'reviews',
     'complaints',
     'captcha',
-    
+    # 'django_ratelimit',  # ← УДАЛЕНО или ЗАКОММЕНТИРОВАНО
 ]
 
 MIDDLEWARE = [
@@ -34,6 +34,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'users.middleware.SimpleRateLimitMiddleware',
 ]
 
 ROOT_URLCONF = 'travel_buddy.urls'
@@ -95,7 +96,7 @@ CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
 CSRF_USE_SESSIONS = False
 
-# Логирование действий пользователей
+# ===== ЛОГИРОВАНИЕ ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЕЙ =====
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -123,14 +124,16 @@ LOGGING = {
             'propagate': True,
         },
     },
-    
 }
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # для теста (письма в консоль)
-# Для реальной почты раскомментировать:
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'your_email@gmail.com'
-# EMAIL_HOST_PASSWORD = 'your_password'
+
+# ===== EMAIL НАСТРОЙКИ =====
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'travelbuddy@example.com'
+
+# ===== НАСТРОЙКИ КЭША ДЛЯ RATE LIMITING =====
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}

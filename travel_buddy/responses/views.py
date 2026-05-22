@@ -1,14 +1,23 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.utils.timezone import now
+# from django_ratelimit.decorators import ratelimit  # ← УДАЛИТЕ
 from routes.models import Route
 from .models import Response
 from travel_buddy.utils import log_action, send_notification
 
 
 @login_required
+# @ratelimit(key='user', rate='10/h', method='POST')  # ← УДАЛИТЕ
 @log_action('Отклик на маршрут')
 def response_create(request, route_id):
+    # Проверка лимита (удалите этот блок)
+    # was_limited = getattr(request, 'limited', False)
+    # if was_limited:
+    #     messages.warning(request, '❌ Слишком много откликов. Подождите немного перед новыми откликами.')
+    #     return redirect('route_detail', route_id=route_id)
+    
     route = get_object_or_404(Route, id=route_id)
     
     # Нельзя откликнуться на свой маршрут
@@ -26,7 +35,7 @@ def response_create(request, route_id):
         )
         messages.success(request, 'Отклик отправлен!')
         
-        # ===== УВЕДОМЛЕНИЕ НА EMAIL АВТОРУ МАРШРУТА =====
+        # Уведомление на email автору маршрута
         if route.author.email:
             send_notification(
                 route.author.email,
@@ -58,7 +67,11 @@ def response_update(request, response_id):
             status_display = dict(Response.STATUS_CHOICES).get(status, status)
             messages.success(request, f'Статус отклика изменён на "{status_display}"')
             
-            # ===== УВЕДОМЛЕНИЕ НА EMAIL УЧАСТНИКУ =====
+            # Обновляем уровень доверия, если отклик принят и маршрут завершён
+            if status == 'ACCEPTED' and response.route.end_date < now().date():
+                response.user.update_trust_level()
+            
+            # Уведомление на email участнику
             if response.user.email and old_status != status:
                 status_text = 'принят' if status == 'ACCEPTED' else 'отклонён'
                 send_notification(
