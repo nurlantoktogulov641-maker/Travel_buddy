@@ -4,24 +4,36 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-7 col-lg-6">
+        <div class="mb-3">
+            <a href="{% url 'profile' target_user.id %}" style="color: var(--tb-text-muted); font-size: 14px;">
+                <i class="fas fa-arrow-left"></i> К профилю
+            </a>
+        </div>
         <div class="card">
-            <div class="card-header bg-danger text-white">
-                <h3 class="mb-0">⚠️ Жалоба на пользователя {{ target_user.username }}</h3>
+            <div class="card-header">
+                <h3 style="font-size: 20px; margin: 0;">
+                    <i class="fas fa-flag text-danger"></i> Жалоба на {{ target_user.username }}
+                </h3>
+                <div class="text-muted mt-1" style="font-size: 13.5px;">
+                    Опиши проблему — модерация рассмотрит её
+                </div>
             </div>
             <div class="card-body">
                 <form method="post">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label class="form-label">Причина жалобы</label>
+                        <label class="form-label">Причина</label>
                         {{ form.reason }}
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Описание</label>
                         {{ form.description }}
                     </div>
-                    <button type="submit" class="btn btn-danger">Отправить жалобу</button>
-                    <a href="{% url 'profile' target_user.id %}" class="btn btn-secondary">Отмена</a>
+                    <div class="d-flex gap-2 justify-content-end mt-4">
+                        <a href="{% url 'profile' target_user.id %}" class="btn btn-secondary">Отмена</a>
+                        <button type="submit" class="btn btn-danger">Отправить жалобу</button>
+                    </div>
                 </form>
             </div>
         </div>

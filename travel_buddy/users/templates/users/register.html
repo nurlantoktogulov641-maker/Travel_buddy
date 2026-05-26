@@ -1,63 +1,70 @@
 {% extends 'base.html' %}
 
 {% block title %}Регистрация - Travel Buddy{% endblock %}
+{% block toasts %}{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-5">
         <div class="card">
-            <div class="card-header text-center">
-                <h3 class="mb-0">📝 Регистрация</h3>
-            </div>
-            <div class="card-body">
+            <div class="card-body" style="padding: 32px;">
+                <div class="text-center mb-4">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: var(--tb-teal-soft); color: var(--tb-teal); font-size: 24px;">
+                        <i class="fas fa-user-plus"></i>
+                    </span>
+                    <h2 style="font-size: 22px; margin-top: 14px;">Создай аккаунт</h2>
+                    <p class="text-muted" style="font-size: 14px;">Начни искать попутчиков уже сегодня</p>
+                </div>
+
                 <form method="post">
                     {% csrf_token %}
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Имя пользователя</label>
                         {{ form.username }}
                         {% if form.username.errors %}
-                            <div class="text-danger small">{{ form.username.errors }}</div>
+                            <div class="text-danger small mt-1">{{ form.username.errors }}</div>
                         {% endif %}
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         {{ form.email }}
                         {% if form.email.errors %}
-                            <div class="text-danger small">{{ form.email.errors }}</div>
+                            <div class="text-danger small mt-1">{{ form.email.errors }}</div>
                         {% endif %}
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Пароль</label>
                         {{ form.password1 }}
                         {% if form.password1.errors %}
-                            <div class="text-danger small">{{ form.password1.errors }}</div>
+                            <div class="text-danger small mt-1">{{ form.password1.errors }}</div>
                         {% endif %}
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label">Подтверждение пароля</label>
                         {{ form.password2 }}
                         {% if form.password2.errors %}
-                            <div class="text-danger small">{{ form.password2.errors }}</div>
+                            <div class="text-danger small mt-1">{{ form.password2.errors }}</div>
                         {% endif %}
                     </div>
-                    
-                    <!-- Поле капчи -->
-                    <div class="mb-3">
+
+                    <div class="mb-4">
                         <label class="form-label">Капча</label>
                         {{ form.captcha }}
                         {% if form.captcha.errors %}
-                            <div class="text-danger small">{{ form.captcha.errors }}</div>
+                            <div class="text-danger small mt-1">{{ form.captcha.errors }}</div>
                         {% endif %}
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
                 </form>
-                <hr>
-                <p class="text-center mb-0">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+
+                <p class="text-center mt-4 mb-0 text-muted" style="font-size: 14px;">
+                    Уже есть аккаунт? <a href="{% url 'login' %}" style="font-weight: 600;">Войти</a>
+                </p>
             </div>
         </div>
     </div>

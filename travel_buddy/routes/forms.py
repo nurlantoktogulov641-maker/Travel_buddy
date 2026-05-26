@@ -13,7 +13,7 @@ class RouteForm(forms.ModelForm):
     
     class Meta:
         model = Route
-        fields = ['title', 'description', 'countries', 'cities', 'start_city', 'end_city', 'waypoints', 'start_date', 'end_date', 'budget', 'tags', 'image']
+        fields = ['title', 'description', 'countries', 'cities', 'start_city', 'end_city', 'waypoints', 'start_date', 'end_date', 'budget', 'max_spots', 'tags', 'image']
         widgets = {
             'start_date': forms.DateInput(attrs={'type': 'date'}),
             'end_date': forms.DateInput(attrs={'type': 'date'}),

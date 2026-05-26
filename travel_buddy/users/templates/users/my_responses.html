@@ -3,18 +3,48 @@
 {% block title %}Мои отклики{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2>Мои отклики</h2>
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+    <div>
+        <h1 style="font-size: 26px; margin: 0;">
+            <i class="far fa-envelope text-primary"></i> Мои отклики
+        </h1>
+        <div class="text-muted" style="font-size: 14px;">Все маршруты, к которым ты присоединился</div>
+    </div>
+</div>
+
+<div class="row g-3">
     {% for response in responses %}
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5>{{ response.route.title }}</h5>
-                <p>Статус: {{ response.get_status_display }}</p>
-                <a href="{% url 'route_detail' response.route.id %}" class="btn btn-primary">Перейти</a>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between mb-2">
+                        <h5 style="font-size: 16px; margin: 0; flex: 1; min-width: 0;">{{ response.route.title }}</h5>
+                        {% if response.status == 'PENDING' %}
+                            <span class="tb-tag tb-tag-adventure">⏳ Ожидание</span>
+                        {% elif response.status == 'ACCEPTED' %}
+                            <span class="tb-tag tb-tag-featured">✓ Принят</span>
+                        {% else %}
+                            <span class="badge bg-danger">Отклонён</span>
+                        {% endif %}
+                    </div>
+                    <div class="text-muted mb-3" style="font-size: 13px;">
+                        <i class="fas fa-map-marker-alt"></i> {{ response.route.countries }}
+                    </div>
+                    <a href="{% url 'route_detail' response.route.id %}" class="btn btn-primary btn-sm w-100">Открыть маршрут</a>
+                </div>
             </div>
         </div>
     {% empty %}
-        <p>Нет откликов</p>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center py-5">
+                    <div style="font-size: 48px; margin-bottom: 12px;">📭</div>
+                    <h5>Пока нет откликов</h5>
+                    <p class="text-muted">Найди интересный маршрут и присоединяйся к попутчикам</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Найти маршрут</a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 </div>
 {% endblock %}

@@ -1,38 +1,94 @@
 {% extends 'base.html' %}
 
+{% block toasts %}{% endblock %}
+
 {% block content %}
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0">💬 Чат маршрута: {{ route.title }}</h5>
+<div class="mb-3">
+    <a href="{% url 'route_detail' route.id %}" style="color: var(--tb-text-muted); font-size: 14px;">
+        <i class="fas fa-arrow-left"></i> Назад к маршруту
+    </a>
+</div>
+
+<div class="card chat-card">
+    <div class="card-header">
+        <div class="chat-avatar" style="background: var(--tb-teal);"><i class="fas fa-users"></i></div>
+        <div class="flex-grow-1">
+            <div style="font-weight: 600;">{{ route.title }}</div>
+            <small class="text-muted">Групповой чат маршрута</small>
         </div>
-        <div class="card-body" style="height: 500px; overflow-y: auto;" id="chatMessages">
-            {% for message in messages %}
-                <div class="message {% if message.sender == user %}message-sent{% else %}message-received{% endif %}">
-                    <strong>{{ message.sender.username }}</strong>
-                    <p class="mb-1">{{ message.text }}</p>
-                    <small class="time">{{ message.created_at|date:"d.m.Y H:i" }}</small>
+    </div>
+    <div class="chat-body" id="chatMessages">
+        {% for message in messages %}
+            <div class="msg-row {% if message.sender == user %}msg-row-self{% endif %}">
+                <div class="chat-bubble {% if message.sender == user %}bg-primary text-white{% else %}bg-light{% endif %}">
+                    {% if message.sender != user %}
+                        <span class="bubble-author">{{ message.sender.username }}</span>
+                    {% endif %}
+                    <div class="bubble-text">{{ message.text }}</div>
+                    <small class="bubble-time" title="{{ message.created_at|date:'d.m.Y H:i' }}">{{ message.created_at|date:"H:i" }}</small>
                 </div>
-            {% empty %}
-                <p class="text-center text-muted">Нет сообщений. Напишите первым!</p>
-            {% endfor %}
-        </div>
-        <div class="card-footer">
-            <form method="post">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input type="text" name="text" class="form-control" placeholder="Введите сообщение..." required>
-                    <button class="btn btn-primary" type="submit">Отправить</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        {% empty %}
+            <div class="chat-empty">
+                <div class="chat-empty-icon">💬</div>
+                <div>Пока тихо. Напиши первым!</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="chat-input">
+        <form method="post" id="chatForm" class="d-flex gap-2 w-100">
+            {% csrf_token %}
+            <input type="text" name="text" class="form-control" placeholder="Напишите сообщение…" autocomplete="off" required>
+            <button class="send-btn" type="submit" aria-label="Отправить">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
     </div>
 </div>
 
 <script>
-    var chatMessages = document.getElementById('chatMessages');
-    if (chatMessages) {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+(function () {
+    var box = document.getElementById('chatMessages');
+    var form = document.getElementById('chatForm');
+    var input = form.querySelector('input[name="text"]');
+    function scrollToBottom() { if (box) box.scrollTop = box.scrollHeight; }
+    scrollToBottom();
+    function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(text || ''));
+        return div.innerHTML;
     }
+    function appendMessage(m) {
+        var empty = box.querySelector('.chat-empty');
+        if (empty) empty.remove();
+        var row = document.createElement('div');
+        row.className = 'msg-row' + (m.is_self ? ' msg-row-self' : '');
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble ' + (m.is_self ? 'bg-primary text-white' : 'bg-light');
+        var authorHtml = m.is_self ? '' : '<span class="bubble-author">' + escapeHtml(m.sender) + '</span>';
+        bubble.innerHTML = authorHtml + '<div class="bubble-text">' + escapeHtml(m.text) + '</div><small class="bubble-time">' + escapeHtml(m.created_at) + '</small>';
+        row.appendChild(bubble);
+        box.appendChild(row);
+        scrollToBottom();
+    }
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = input.value.trim();
+        if (!text) return;
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        fetch(form.action || window.location.href, {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            body: new FormData(form)
+        })
+        .then(function (resp) { if (!resp.ok) throw new Error(); return resp.json(); })
+        .then(function (data) {
+            if (data.status === 'ok') { appendMessage(data.message); input.value = ''; input.focus(); }
+        })
+        .catch(function () { form.submit(); })
+        .finally(function () { btn.disabled = false; });
+    });
+})();
 </script>
 {% endblock %}

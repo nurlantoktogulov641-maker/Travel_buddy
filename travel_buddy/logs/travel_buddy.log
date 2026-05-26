@@ -4638,3 +4638,1175 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'response_create' not found. 
 [2026-05-17 12:19:16.399018+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/8/
 [2026-05-17 12:19:21.810887+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/9/
 [2026-05-17 12:19:35.843284+00:00] Пользователь: NAbdullaev | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/7/
+[2026-05-22 19:50:35.568069+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 19:50:36.872455+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:50:39.987219+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-22 19:50:40.832148+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:51:10.796821+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:51:41.754682+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:52:10.803628+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:52:12.525755+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:52:12.711766+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:52:14.173719+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 19:52:15.047789+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 19:52:22.234516+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-22 19:52:24.805268+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 19:53:34.238280+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 19:53:48.009128+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[2026-05-22 19:59:58.292283+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 19:59:58.414128+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-22 20:00:17.513540+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:00:17.556324+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:00:17.563917+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-22 20:01:11.562926+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:01:16.715903+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-22 20:01:16.795661+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:01:17.043231+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:01:18.257985+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:01:18.373660+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:01:20.029187+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:01:20.993931+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:01:24.276082+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:01:32.276276+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:01:52.254246+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:01:59.002644+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:02:01.350737+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-22 20:02:14.374986+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-22 20:02:23.799645+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-22 20:02:35.745142+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-22 20:04:52.917869+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:04:52.936974+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:04:52.944865+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:05:08.929105+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:05:08.956234+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:05:08.964537+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:05:45.685579+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:05:51.188034+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:05:55.713149+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:06:01.245239+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:06:07.111439+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:12.777427+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:14.195843+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:23.014086+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:23.070117+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:35.888482+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:35.946292+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:46.379559+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:46.459899+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:51.107825+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:06:51.166031+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:07:25.358041+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:07:30.522023+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:07:33.757921+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:07:35.107043+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:07:39.551140+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:07:42.933038+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:07:48.100943+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:07:48.152212+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:09:51.923651+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:09:51.946029+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:09:51.953475+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:10:08.741324+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:10:14.277402+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-22 20:10:18.659122+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:10:25.358337+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:10:26.667862+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:14:32.294637+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+Internal Server Error: /chat/private/2/
+Traceback (most recent call last):
+  File "c:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 33, in send_notification
+    send_mail(
+    ~~~~~~~~~^
+        subject,
+        ^^^^^^^^
+    ...<3 lines>...
+        fail_silently=False,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\__init__.py", line 92, in send_mail
+    return mail.send()
+           ~~~~~~~~~^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\backends\console.py", line 37, in send_messages
+    self.write_message(message)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\backends\console.py", line 24, in write_message
+    self.stream.write("%s\n" % msg_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\encodings\cp1251.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f517' in position 511: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "c:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "c:\Users\sheri\Downloads\diplom\travel_buddy\chat\views.py", line 144, in private_chat
+    send_notification(
+    ~~~~~~~~~~~~~~~~~^
+        receiver.email,
+        ^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        f'---\nС уважением, команда Travel Buddy'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 43, in send_notification
+    print(f"✗ Ошибка отправки email на {email}: {e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\encodings\cp1251.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+[2026-05-22 20:14:51.588982+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+Internal Server Error: /chat/private/2/
+Traceback (most recent call last):
+  File "C:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 40, in send_notification
+    print(f"✓ Email отправлен на {email}: {subject}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\encodings\cp1251.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 22, in wrapper
+    return func(request, *args, **kwargs)
+  File "C:\Users\sheri\Downloads\diplom\travel_buddy\chat\views.py", line 144, in private_chat
+    send_notification(
+    ~~~~~~~~~~~~~~~~~^
+        receiver.email,
+        ^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        f'---\nС уважением, команда Travel Buddy'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\sheri\Downloads\diplom\travel_buddy\travel_buddy\utils.py", line 43, in send_notification
+    print(f"✗ Ошибка отправки email на {email}: {e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\encodings\cp1251.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+[2026-05-22 20:15:09.837161+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:15:11.163182+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+Bad Request: /chat/private/2/
+[2026-05-22 20:15:11.173537+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:15:11.238460+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:15:11.262492+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-22 20:15:11.330241+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-22 20:16:09.530793+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:16:17.042962+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:16:19.961566+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:16:26.159717+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:16:33.986194+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-22 20:16:36.324962+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:16:39.122990+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-22 20:16:39.170622+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:16:39.372977+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:16:40.414368+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:16:40.572238+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:16:42.080679+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:16:42.966212+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:16:55.408415+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-22 20:16:55.482670+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:16:55.730834+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:01.084677+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:01.284427+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:02.176597+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:03.023663+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:17:16.531081+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-22 20:17:16.616011+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:17:16.865871+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:18.957892+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-22 20:17:19.214415+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:21.063221+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:17:21.242737+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /accounts/vk/login/
+"GET /accounts/vk/login/ HTTP/1.1" 404 6576
+[2026-05-22 20:18:10.801952+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:11.472214+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:17.288116+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:17.500070+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:20.069661+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:20.244584+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:23.081737+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:23.306907+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:41.675855+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:41.850252+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:43.748314+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:43.870564+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:45.254482+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:18:46.156457+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:18:48.225385+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-22 20:18:53.620300+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:19:34.135309+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-22 20:19:39.996744+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-22 20:19:40.032966+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:19:40.326504+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:19:41.628583+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-22 20:19:41.913053+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:19:42.678064+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:19:42.856178+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /accounts/google/login/
+"GET /accounts/google/login/ HTTP/1.1" 404 6588
+Not Found: /accounts/telegram/login/
+"GET /accounts/telegram/login/ HTTP/1.1" 404 6594
+[2026-05-22 20:19:51.004611+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:19:53.148522+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-22 20:19:53.365646+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-22 20:20:23.274358+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 09:18:22.325610+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-26 09:18:22.336684+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка сообщения в чат | URL: /chat/room/4/
+[2026-05-26 09:18:22.354025+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/2/
+[2026-05-26 09:18:23.720435+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 09:23:14.919980+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 09:23:16.249847+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6555
+[2026-05-26 09:23:18.363955+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 09:23:18.424472+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 09:23:19.410067+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 09:23:20.029136+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 09:23:23.128667+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 09:23:26.608650+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 09:23:29.169240+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-26 09:32:23.997649+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-26 10:01:39.748979+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:01:51.741783+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 10:01:55.106355+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 10:01:58.380127+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:02:02.802339+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-26 10:02:08.860819+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:02:10.364928+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 10:02:10.412801+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:02:12.039324+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 10:02:14.301025+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 10:02:14.984449+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:08:04.427536+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+"GET /static/css/design-system.css HTTP/1.1" 404 1877
+[2026-05-26 10:08:18.264723+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:10:14.334299+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:32:15.114337+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 10:34:22.039444+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 10:34:24.223623+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 10:34:30.691205+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 11:27:33.480923+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:48:18.428261+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6555
+[2026-05-26 15:48:24.839955+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-26 15:48:27.961212+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-26 15:48:29.103284+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:49:06.539792+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:49:10.309529+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/20/
+[2026-05-26 15:49:17.404168+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:11.820488+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 15:51:11.839609+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:11.907720+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 15:51:13.194344+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-26 15:51:13.333508+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 15:51:15.441356+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 15:51:15.498947+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 15:51:18.081136+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 15:51:18.467869+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:34.086185+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:38.946597+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:42.073600+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:44.417676+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:53.934277+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:51:56.177267+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:52:08.077571+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:52:13.771267+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 15:52:19.228918+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:52:27.889396+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 15:52:30.208565+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:06:48.429209+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:06:49.424087+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-26 16:06:53.207274+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 16:06:56.670291+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 16:07:01.442927+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-26 16:07:17.270240+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:07:28.000435+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 16:07:32.262225+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 16:07:34.324497+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-26 16:07:36.335196+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:07:41.899682+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:07:49.867301+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:08:05.527024+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр избранных маршрутов | URL: /favorites/
+[2026-05-26 16:08:07.093014+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6666
+[2026-05-26 16:11:14.942072+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:11:17.651798+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 16:11:19.927984+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/5/
+[2026-05-26 16:11:25.718194+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Отправка личного сообщения | URL: /chat/private/3/
+[2026-05-26 16:11:53.237293+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Редактирование профиля | URL: /users/profile/1/edit/
+[2026-05-26 16:12:38.084817+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:12:43.526812+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:12:51.546773+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:12:54.196034+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/16/
+[2026-05-26 16:12:58.286121+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:13:00.404765+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-26 16:13:15.466443+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-26 16:13:22.573444+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:42:49.653419+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 356154
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 356154
+Not Found: /admin_dashboard
+"GET /admin_dashboard HTTP/1.1" 404 6567
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 356324
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 172, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 164, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 1018, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\base.py", line 979, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_dashboard' not found. 'admin_dashboard' is not a valid view function or pattern name.
+"GET /admin/ HTTP/1.1" 500 356322
+[2026-05-26 16:54:50.324887+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:55:28.533932+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:55:58.579290+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:56:01.108801+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 16:56:01.166180+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:56:01.421408+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:21.704659+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:21.904824+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:24.131313+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:25.017094+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:56:58.043431+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 16:56:58.078841+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:56:58.256968+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:59.758264+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:56:59.854720+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:57:02.316457+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:57:03.240609+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:57:25.019577+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:57:25.892979+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:59:12.884890+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:59:15.861176+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 16:59:15.946740+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 16:59:16.143755+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:18.212063+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:18.353598+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:23.819334+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:24.749849+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:43.015653+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 16:59:43.946519+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:13.917245+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:16.473444+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:20.634897+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:22.670520+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:22.800251+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:00:52.745481+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:01:22.740820+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:01:39.424675+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:01:40.139015+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:01:52.446313+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:01:55.875168+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 17:01:55.920350+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:01:56.118869+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:01:57.587960+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:01:57.738169+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:02:01.090100+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:02:01.959648+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:14:47.784566+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:14:48.113576+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:15:18.749252+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:15:48.769145+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:16:18.757977+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:16:48.747146+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:17:18.752651+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:17:48.749734+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:19:13.749361+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:19:18.283342+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6849
+[2026-05-26 17:19:27.639892+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6849
+[2026-05-26 17:19:27.919734+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:19:57.868379+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:20:03.098225+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6849
+[2026-05-26 17:20:03.816609+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:20:34.748967+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:21:04.748642+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:21:34.750220+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:22:04.821541+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:22:34.780104+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:23:04.774452+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:24:13.749155+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:25:13.774744+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:25:54.233664+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:26:04.257236+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:26:34.849361+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:27:04.740564+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:27:34.751778+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:28:04.743860+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:29:13.769030+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:30:13.746139+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:31:13.748508+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:32:13.752103+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:33:13.744546+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:34:13.745874+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:37:07.699711+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:37:58.096158+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:49:52.921703+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:49:53.176003+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:49:54.342520+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:49:54.421027+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:49:58.109463+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:50:00.251464+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:50:01.379435+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:50:01.438614+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:50:31.743427+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:51:01.735341+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:51:31.749967+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:52:01.746939+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:52:31.742124+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:53:01.748898+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:54:13.738483+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:06.524423+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 17:55:06.836990+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:08.626907+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:08.684645+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:13.877873+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:15.590273+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:17.976438+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:19.188054+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:19.255643+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:37.451923+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:55:49.763716+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:56:01.736589+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:56:19.733449+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:56:31.736080+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:56:34.749359+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:01.738897+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:04.735689+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\auth\forms.py", line 434, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ~~~~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, **connection_params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\sheri\miniconda3\Lib\smtplib.py", line 264, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\smtplib.py", line 321, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "C:\Users\sheri\miniconda3\Lib\socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+[2026-05-26 17:57:24.886519+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:26.199824+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:26.273586+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:27.875347+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:31.735187+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:31.949618+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:33.435635+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:33.494313+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:38.660183+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:40.385051+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:45.550110+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:57:45.631274+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:58:13.741143+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:58:15.734717+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:58:45.739993+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:13.739349+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:15.740615+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:31.901512+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:37.681457+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:48.703530+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:50.339652+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 17:59:50.395311+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:07.010657+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:20.377669+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:21.766462+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:21.820877+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:24.988887+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:27.099547+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:33.217897+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:00:33.275428+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:01:03.740647+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:01:33.747034+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:02:03.747346+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:02:33.743561+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:03:03.746522+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:03:33.258487+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:03:40.173022+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:03:40.685130+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:06:07.809202+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:06:09.820937+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:06:09.846328+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:06:09.926345+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:11.381143+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-26 18:06:11.521448+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:12.437806+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:12.506972+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:13.655663+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:19.531909+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:24.910134+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:37.702613+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:06:49.744462+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:02.973046+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:04.700554+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:04.777799+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:11.180681+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:11.678533+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:17.123637+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:17.203263+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:19.750742+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:22.094032+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:22.543493+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:40.686297+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:41.139663+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Not Found: /accounts/vk/login/
+"GET /accounts/vk/login/ HTTP/1.1" 404 6759
+[2026-05-26 18:07:47.892654+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:07:48.113037+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:49.750743+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:53.421856+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:53.489450+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:57.287865+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:07:57.744421+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:08:24.128464+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:08:33.778540+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Вход в систему | URL: /login/
+Forbidden: /login/
+"POST /login/ HTTP/1.1" 403 17
+Forbidden: /login/
+"POST /login/ HTTP/1.1" 403 17
+[2026-05-26 18:09:20.520531+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:09:25.419359+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:09:25.439275+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:09:25.549276+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:29.745738+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:29.807368+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:41.190051+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:41.589285+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:43.471072+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:09:55.201101+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:10:13.897716+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:10:25.747833+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:10:44.762464+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:10:55.735313+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:11:14.742739+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:11:25.744585+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:11:44.742179+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:11:55.762139+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:12:14.779774+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:12:25.750079+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:12:44.757886+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:12:55.761047+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:13:14.762933+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:09.517246+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:13.753547+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:13.885213+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:14.826795+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:24.899061+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:24.974645+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:35.165014+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:14:35.630104+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:14:47.664258+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:16:24.455612+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:16:24.504050+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:16:24.638246+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:16:26.324359+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:16:26.450431+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:16:28.573611+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:16:29.174502+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:17:21.956369+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:17:25.361498+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:17:26.004021+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Forbidden (CSRF token from POST incorrect.): /admin/users/user/4/change/
+"POST /admin/users/user/4/change/ HTTP/1.1" 403 2545
+[2026-05-26 18:18:16.555997+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:18:20.545604+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:18:20.590629+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:18:20.719722+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:18:22.143666+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:18:22.229142+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:18:25.779050+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:18:26.305441+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:19:23.570688+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:19:25.833385+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:19:25.865230+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:19:26.038447+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:19:27.190937+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:19:27.266111+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:19:29.529436+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:19:30.041046+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Forbidden (Permission denied): /admin/users/user/5/change/
+Traceback (most recent call last):
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\admin\options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\admin\options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\admin\options.py", line 1841, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sheri\miniconda3\Lib\site-packages\django\contrib\admin\options.py", line 1871, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+"GET /admin/users/user/5/change/ HTTP/1.1" 403 135
+[2026-05-26 18:21:18.940187+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:21:21.064290+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:21:21.090135+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:21:21.211623+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:21:22.920162+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:21:22.996153+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:21:25.423616+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:21:25.948308+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:34:32.556426+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:35:15.305912+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Создание маршрута | URL: /route/create/
+[2026-05-26 18:35:19.328420+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:35:27.637581+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:35:29.973666+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/4/
+[2026-05-26 18:37:06.671254+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:37:11.107570+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 18:37:33.066231+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:38:32.361449+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:39:38.121033+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:40:34.616582+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/7/
+[2026-05-26 18:40:37.045023+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/7/
+Not Found: /\u0444\u0432\u044c\u0448\u0442
+"GET /%D1%84%D0%B2%D1%8C%D1%88%D1%82 HTTP/1.1" 404 6755
+[2026-05-26 18:44:29.653173+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:51:48.651331+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:01.969174+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:52:02.045979+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:02.286616+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:04.244092+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:04.408942+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:06.591340+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:07.302384+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:11.054089+00:00] Пользователь: Фатима | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:52:11.134302+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:11.353759+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:13.025463+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:13.174938+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:16.476824+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:17.543332+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:33.689398+00:00] Пользователь: Sansarboev | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:52:33.727482+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:52:33.895297+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:35.629494+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:35.764152+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:39.791197+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:52:40.685541+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:53:55.936364+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:54:01.252497+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:54:01.320648+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:54:01.501375+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:54:05.130890+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:54:05.218049+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:54:09.418585+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-26 18:54:09.690088+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:54:39.618346+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:55:02.322952+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Регистрация пользователя | URL: /users/register/
+[2026-05-26 18:55:03.674268+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:59:02.499676+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:59:06.074512+00:00] Пользователь: jp | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 18:59:06.200280+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 18:59:06.379439+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:59:07.412490+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:59:07.493837+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:59:09.024010+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 18:59:10.080620+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:02:31.135544+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:02:46.107989+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:02:46.259209+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:02:49.961609+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:02:50.074055+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:02:51.200427+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:02:52.129309+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:02:59.315805+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:03:08.418511+00:00] Пользователь: jp | IP: 127.0.0.1 | Отклик на маршрут | URL: /responses/create/21/
+[2026-05-26 19:03:14.716537+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:04:28.947584+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:04:31.419730+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:04:34.630608+00:00] Пользователь: jp | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 19:04:34.676062+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:04:34.884966+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:04:37.425987+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:04:37.583999+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:04:40.258757+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:04:41.253118+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:07:42.492073+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:08:13.051149+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:08:14.222824+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 19:08:14.255936+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:08:14.398277+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:08:15.484638+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:08:15.572588+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:08:18.976450+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:08:20.119934+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:08:30.493703+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:08:34.668750+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:08:48.978214+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:09:01.295296+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:09:04.160304+00:00] Пользователь: jp | IP: 127.0.0.1 | Оставление отзыва | URL: /reviews/create/21/3/
+[2026-05-26 19:09:13.670123+00:00] Пользователь: jp | IP: 127.0.0.1 | Оставление отзыва | URL: /reviews/create/21/3/
+[2026-05-26 19:09:13.798313+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр маршрута | URL: /route/21/
+[2026-05-26 19:09:52.161278+00:00] Пользователь: jp | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:09:53.338765+00:00] Пользователь: jp | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 19:09:53.407165+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:09:53.735990+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:09:55.162212+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:09:55.261980+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:09:57.317225+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:09:59.093899+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+Forbidden (CSRF token from POST incorrect.): /login/
+"POST /login/ HTTP/1.1" 403 2545
+[2026-05-26 19:10:06.329355+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:07.792804+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:08.933388+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:10:11.307928+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Выход из системы | URL: /logout/
+[2026-05-26 19:10:11.344077+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:10:11.531793+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:13.192816+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:13.305835+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:14.500742+00:00] Пользователь: Аноним | IP: 127.0.0.1 | Вход в систему | URL: /login/
+[2026-05-26 19:10:15.293157+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /
+[2026-05-26 19:10:35.280819+00:00] Пользователь: NSadykov | IP: 127.0.0.1 | Просмотр главной страницы | URL: /

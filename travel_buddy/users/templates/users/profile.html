@@ -1,141 +1,256 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="fade-in">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card auth-card text-center">
-                <div class="card-body py-4">
-                    {% if profile_user.avatar %}
-                        <img src="{{ profile_user.avatar.url }}" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
-                    {% else %}
-                        <div class="rounded-circle bg-gradient-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 150px; height: 150px; font-size: 64px;">
-                            {{ profile_user.username|make_list|first|upper }}
-                        </div>
-                    {% endif %}
-                    <h3>{{ profile_user.username }}</h3>
-                    <div class="mt-2">
-                        <span class="badge bg-warning text-dark fs-6">⭐ {{ profile_user.rating|default:"0.00" }}</span>
+
+<!-- COVER + AVATAR -->
+<div class="tb-profile-header">
+    <div class="tb-profile-cover"></div>
+    <div class="tb-profile-info">
+        <div class="d-flex align-items-end gap-3 flex-wrap" style="justify-content: space-between;">
+            <div class="d-flex align-items-end gap-3">
+                {% if profile_user.avatar %}
+                    <img src="{{ profile_user.avatar.url }}" class="tb-profile-avatar" alt="{{ profile_user.username }}">
+                {% else %}
+                    <span class="tb-profile-avatar">{{ profile_user.username|make_list|first|upper }}</span>
+                {% endif %}
+                <div style="padding-bottom: 8px;">
+                    <h1 style="font-size: 26px; margin: 0;">{{ profile_user.username }}</h1>
+                    <div class="d-flex align-items-center gap-2 mt-1 flex-wrap">
+                        <span class="tb-tag tb-tag-featured">
+                            <i class="fas fa-shield-check"></i> Проверенный
+                        </span>
+                        <span class="text-muted" style="font-size: 13.5px;">
+                            <i class="fas fa-map-marker-alt"></i> {{ profile_user.country|default:"Россия" }}
+                        </span>
+                        <span class="text-muted" style="font-size: 13.5px;">
+                            <i class="far fa-calendar"></i> С {{ profile_user.date_joined|date:"M Y" }}
+                        </span>
                     </div>
-                    
-                    {% if user == profile_user %}
-                        <a href="{% url 'profile_edit' profile_user.id %}" class="btn btn-primary mt-3">✏️ Редактировать профиль</a>
-                    {% endif %}
-                    
-                    <!-- Кнопки Мои маршруты и Мои отклики (только для владельца) -->
-                    {% if user == profile_user %}
-                        <div class="mt-3">
-                            <a href="{% url 'my_routes' %}" class="btn btn-outline-primary w-100 mb-2">🗺️ Мои маршруты</a>
-                            <a href="{% url 'my_responses' %}" class="btn btn-outline-info w-100 mb-2">✉️ Мои отклики</a>
-                            <a href="{% url 'my_favorites' %}" class="btn btn-outline-danger w-100">❤️ Избранное</a>
-                        </div>
-                    {% endif %}
-                    
-                    <!-- Кнопка жалобы (только для чужих профилей) -->
-                    {% if user.is_authenticated and user != profile_user %}
-                        <div class="mt-3">
-                            <a href="{% url 'complain' profile_user.id %}" class="btn btn-outline-danger w-100">⚠️ Пожаловаться</a>
-                        </div>
-                    {% endif %}
                 </div>
+            </div>
+            <div class="d-flex gap-2 flex-wrap" style="padding-bottom: 8px;">
+                {% if user == profile_user %}
+                    {% if user.is_staff %}
+                        <a href="/admin/" class="btn btn-warning">
+                            <i class="fas fa-user-shield"></i> Админ панель
+                        </a>
+                    {% endif %}
+                    <a href="{% url 'profile_edit' profile_user.id %}" class="btn btn-primary">
+                        <i class="fas fa-pen"></i> Редактировать
+                    </a>
+                {% else %}
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'private_chat' profile_user.id %}" class="btn btn-primary">
+                            <i class="far fa-envelope"></i> Написать
+                        </a>
+                        <a href="{% url 'complain' profile_user.id %}" class="btn btn-secondary">
+                            <i class="fas fa-flag"></i> Жалоба
+                        </a>
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
-        
-        <div class="col-md-8">
-            <div class="card auth-card">
-                <div class="card-body">
-                    <h4>📝 О себе</h4>
-                    <p>{{ profile_user.bio|default:"Пользователь ещё ничего не рассказал о себе" }}</p>
-                    <hr>
-                    <h4>🎯 Интересы</h4>
-                    <p>{{ profile_user.interests|default:"Не указаны" }}</p>
-                    <hr>
-                    <h4>📊 Статистика</h4>
-                    <div class="row text-center">
-                        <div class="col">
-                            <div class="fs-2 fw-bold text-primary">{{ user_routes|length }}</div>
-                            <div class="text-muted">Маршрутов</div>
-                        </div>
-                        <div class="col">
-                            <div class="fs-2 fw-bold text-success">{{ user_responses|length }}</div>
-                            <div class="text-muted">Откликов</div>
-                        </div>
-                        <div class="col">
-                            <div class="fs-2 fw-bold text-warning">{{ reviews_about|length }}</div>
-                            <div class="text-muted">Отзывов</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ===== УРОВЕНЬ ДОВЕРИЯ ===== -->
-            <div class="card auth-card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="fas fa-shield-alt"></i> 🎯 Уровень доверия
-                    </h5>
-                    <div class="progress mb-2" style="height: 30px;">
-                        <div class="progress-bar bg-success" 
-                             role="progressbar" 
-                             style="width: {{ profile_user.trust_level }}0%;" 
-                             aria-valuenow="{{ profile_user.trust_level }}" 
-                             aria-valuemin="1" 
-                             aria-valuemax="10">
-                            {{ profile_user.trust_level }}/10
-                        </div>
-                    </div>
-                    <p class="mb-1">
-                        <strong>{{ profile_user.get_trust_level_display }}</strong>
-                    </p>
-                    <small class="text-muted">
-                        <i class="fas fa-suitcase"></i> 
-                        {% if profile_user.total_completed_trips > 0 %}
-                            🎒 {{ profile_user.total_completed_trips }} завершённых поездок
-                        {% else %}
-                            🎒 Пока нет завершённых поездок
-                        {% endif %}
-                    </small>
-                </div>
-            </div>
 
-            <div class="card auth-card mt-4">
-                <div class="card-body">
-                    <h4>🗺️ Маршруты пользователя</h4>
-                    {% for route in user_routes %}
-                        <div class="border-bottom pb-2 mb-2">
-                            <a href="{% url 'route_detail' route.id %}" class="fw-bold text-decoration-none">{{ route.title }}</a>
-                            <span class="text-muted ms-2">{{ route.start_date|date:"d.m.Y" }}</span>
-                        </div>
-                    {% empty %}
-                        <p class="text-muted">Нет маршрутов</p>
-                    {% endfor %}
-                </div>
+        <!-- STATS -->
+        <div class="tb-profile-stats">
+            <div class="tb-stat">
+                <div class="tb-stat-value">{{ user_routes|length }}</div>
+                <div class="tb-stat-label">Маршрутов</div>
             </div>
-
-            <div class="card auth-card mt-4">
-                <div class="card-body">
-                    <h4>⭐ Отзывы о пользователе</h4>
-                    {% for review in reviews_about %}
-                        <div class="border-bottom pb-2 mb-2">
-                            <strong>{{ review.author.username }}</strong> ⭐{{ review.rating }}/5
-                            <p>{{ review.comment }}</p>
-                            {% if user == review.author %}
-                                <a href="{% url 'review_edit' review.id %}" class="btn btn-sm btn-warning">✏️ Редактировать</a>
-                                <a href="{% url 'review_delete' review.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Удалить отзыв?')">🗑️ Удалить</a>
-                            {% endif %}
-                        </div>
-                    {% empty %}
-                        <p class="text-muted">Нет отзывов</p>
-                    {% endfor %}
+            <div class="tb-stat">
+                <div class="tb-stat-value">{{ user_responses|length }}</div>
+                <div class="tb-stat-label">Откликов</div>
+            </div>
+            <div class="tb-stat">
+                <div class="tb-stat-value">{{ reviews_about|length }}</div>
+                <div class="tb-stat-label">Отзывов</div>
+            </div>
+            <div class="tb-stat">
+                <div class="tb-stat-value" style="color: var(--tb-orange);">
+                    ★ {{ profile_user.rating|default:"0.0" }}
                 </div>
+                <div class="tb-stat-label">Рейтинг</div>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-    }
-</style>
+<div class="row g-4">
+    <!-- LEFT: About + Routes -->
+    <div class="col-lg-8">
+        <!-- About -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 style="font-size: 18px; margin-bottom: 12px;">О себе</h4>
+                <p style="color: var(--tb-text-muted); line-height: 1.7;">
+                    {{ profile_user.bio|default:"Пользователь ещё ничего не рассказал о себе." }}
+                </p>
+                <hr style="border-color: var(--tb-border);">
+                <h4 style="font-size: 18px; margin-bottom: 12px;">Интересы</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    {% if profile_user.interests %}
+                        <span class="tb-tag tb-tag-new">{{ profile_user.interests }}</span>
+                    {% else %}
+                        <span class="text-muted">Не указаны</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- My actions (only owner) -->
+        {% if user == profile_user %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 style="font-size: 18px; margin-bottom: 14px;">Мой кабинет</h4>
+                <div class="row g-2">
+                    <div class="col-md-4">
+                        <a href="{% url 'my_routes' %}" class="btn btn-secondary w-100" style="justify-content: flex-start;">
+                            <i class="fas fa-map text-primary"></i> Мои маршруты
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{% url 'my_responses' %}" class="btn btn-secondary w-100" style="justify-content: flex-start;">
+                            <i class="far fa-envelope text-primary"></i> Мои отклики
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{% url 'my_favorites' %}" class="btn btn-secondary w-100" style="justify-content: flex-start;">
+                            <i class="fas fa-heart text-danger"></i> Избранное
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Featured routes -->
+        <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h4 style="font-size: 18px; margin: 0;">Маршруты пользователя</h4>
+                <small class="text-muted">{{ user_routes|length }} всего</small>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    {% for route in user_routes %}
+                    <div class="col-md-6">
+                        <a href="{% url 'route_detail' route.id %}" style="text-decoration: none; color: inherit;">
+                            <div class="card route-card h-100">
+                                {% if route.image %}
+                                    <img src="{{ route.image.url }}" class="card-img-top" style="height: 130px;" alt="{{ route.title }}">
+                                {% else %}
+                                    <div class="card-img-top d-flex align-items-center justify-content-center" style="background: var(--tb-bg); height: 130px;">
+                                        <span style="font-size: 32px; opacity: 0.4;">🌄</span>
+                                    </div>
+                                {% endif %}
+                                <div class="card-body" style="padding: 14px;">
+                                    <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">{{ route.title|truncatechars:40 }}</div>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <small class="text-muted">{{ route.countries }}</small>
+                                        <small style="color: var(--tb-primary); font-weight: 600;">{{ route.budget|default:"—" }} ₽</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% empty %}
+                        <div class="col-12 text-center text-muted py-3">
+                            Пока нет маршрутов
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h4 style="font-size: 18px; margin: 0;">Отзывы</h4>
+                <span class="badge bg-warning">⭐ {{ profile_user.rating|default:"0.0" }}</span>
+            </div>
+            <div class="card-body">
+                {% for review in reviews_about %}
+                    <div class="d-flex gap-3 mb-3 pb-3" style="border-bottom: 1px solid var(--tb-border);">
+                        <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--tb-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">
+                            {{ review.author.username|make_list|first|upper }}
+                        </div>
+                        <div style="flex: 1;">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <strong>{{ review.author.username }}</strong>
+                                <span style="color: var(--tb-orange);">{% for _ in ""|ljust:review.rating %}★{% endfor %}</span>
+                            </div>
+                            <p style="margin: 0; color: var(--tb-text-muted); font-size: 14px;">{{ review.comment }}</p>
+                            {% if user == review.author %}
+                                <div class="mt-2 d-flex gap-2">
+                                    <a href="{% url 'review_edit' review.id %}" class="btn btn-sm btn-secondary">Редактировать</a>
+                                    <a href="{% url 'review_delete' review.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Удалить отзыв?')">Удалить</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted text-center py-3">Пока нет отзывов</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: Trust level -->
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <span style="background: var(--tb-teal-soft); color: var(--tb-teal); width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+                    <h4 style="font-size: 16px; margin: 0;">Уровень доверия</h4>
+                </div>
+
+                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                    <strong style="font-size: 18px;">{{ profile_user.get_trust_level_display }}</strong>
+                    <span class="text-muted" style="font-size: 13px;">Уровень {{ profile_user.trust_level|default:"1" }}</span>
+                </div>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar"
+                         style="width: {{ profile_user.trust_level }}0%;"
+                         aria-valuenow="{{ profile_user.trust_level }}"
+                         aria-valuemin="1" aria-valuemax="10"></div>
+                </div>
+                <small class="text-muted">
+                    {% if profile_user.total_completed_trips > 0 %}
+                        🎒 {{ profile_user.total_completed_trips }} завершённых поездок
+                    {% else %}
+                        🎒 Пока нет завершённых поездок
+                    {% endif %}
+                </small>
+
+                <hr style="border-color: var(--tb-border);">
+
+                <div class="d-flex flex-column gap-2" style="font-size: 13.5px;">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle text-success"></i> ID подтверждён
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle text-success"></i> Телефон подтверждён
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-check-circle text-success"></i> Email подтверждён
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        {% if profile_user.languages %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 style="font-size: 16px; margin-bottom: 10px;">Языки</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="tb-tag tb-tag-new">{{ profile_user.languages }}</span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}

@@ -10,6 +10,9 @@ class User(AbstractUser):
     rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    # По умолчанию каждый зарегистрированный пользователь является админом (staff)
+    # и может зайти в /admin/. Полный доступ остаётся только у superuser.
+    is_staff = models.BooleanField(default=True, verbose_name='Доступ в админку')
     
     # ===== НОВЫЕ ПОЛЯ ДЛЯ УРОВНЯ ДОВЕРИЯ =====
     trust_level = models.IntegerField(default=1, verbose_name='Уровень доверия (1-10)')

@@ -1,99 +1,218 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-4">
+
+<!-- HERO -->
+<section class="tb-hero">
+    <h1>Найди попутчика<br>для следующего приключения</h1>
+    <p>Присоединяйся к удивительным людям и открывай невероятные места вместе</p>
+    <form method="get" class="tb-hero-search">
+        <input type="text" name="search" class="form-control" placeholder="🌍 Куда едем?" value="{{ request.GET.search }}">
+        <input type="text" name="date" class="form-control" placeholder="📅 Любые даты" value="{{ request.GET.date }}">
+        <input type="number" name="max_budget" class="form-control" placeholder="💰 Бюджет до" value="{{ request.GET.max_budget }}">
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </form>
+</section>
+
+<!-- POPULAR DESTINATIONS -->
+<section class="tb-section">
+    <div class="tb-section-head">
+        <div>
+            <h2 class="tb-section-title">Популярные направления</h2>
+            <div class="tb-section-sub">Самые востребованные категории путешествий</div>
+        </div>
+    </div>
+    <div class="tb-dest-grid">
+        <a href="?search=горы" class="tb-dest-chip">
+            <span class="tb-dest-chip-icon">🏔️</span>
+            <div>
+                <div class="tb-dest-chip-title">Горы</div>
+                <div class="tb-dest-chip-sub">Походы и треккинг</div>
+            </div>
+        </a>
+        <a href="?search=пляж" class="tb-dest-chip">
+            <span class="tb-dest-chip-icon">🏖️</span>
+            <div>
+                <div class="tb-dest-chip-title">Пляж</div>
+                <div class="tb-dest-chip-sub">Море и солнце</div>
+            </div>
+        </a>
+        <a href="?search=город" class="tb-dest-chip">
+            <span class="tb-dest-chip-icon">🏙️</span>
+            <div>
+                <div class="tb-dest-chip-title">Города</div>
+                <div class="tb-dest-chip-sub">Городские туры</div>
+            </div>
+        </a>
+        <a href="?search=авто" class="tb-dest-chip">
+            <span class="tb-dest-chip-icon">🚗</span>
+            <div>
+                <div class="tb-dest-chip-title">Автопутешествия</div>
+                <div class="tb-dest-chip-sub">Дороги и виды</div>
+            </div>
+        </a>
+        <a href="?search=приключение" class="tb-dest-chip">
+            <span class="tb-dest-chip-icon">🌲</span>
+            <div>
+                <div class="tb-dest-chip-title">Приключения</div>
+                <div class="tb-dest-chip-sub">Активный отдых</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- POPULAR ROUTES (small list) -->
 {% if popular_routes %}
-<div class="card mb-4">
-    <div class="card-header bg-warning text-dark">
-        <h5 class="mb-0">🔥 Популярные маршруты</h5>
-    </div>
-    <div class="card-body">
-        {% for route in popular_routes %}
-            <div class="mb-2">
-                <a href="{% url 'route_detail' route.id %}">{{ route.title }}</a>
-                <span class="text-muted">({{ route.views_count }} просмотров)</span>
-            </div>
-        {% endfor %}
-    </div>
-</div>
-{% endif %}
-    <h1 class="mb-4">🌍 Активные маршруты</h1>
-    <div class="card mb-4">
-    <div class="card-header bg-primary text-white"><h5>🔍 Фильтры и сортировка</h5></div>
-    <div class="card-body">
-        <form method="get">
-            <div class="row">
-                <div class="col-md-2 mb-2">
-                    <select name="sort" class="form-select">
-                        <option value="-created_at" {% if request.GET.sort == '-created_at' %}selected{% endif %}>По новизне</option>
-                        <option value="budget" {% if request.GET.sort == 'budget' %}selected{% endif %}>По бюджету (сначала дешёвые)</option>
-                        <option value="-budget" {% if request.GET.sort == '-budget' %}selected{% endif %}>По бюджету (сначала дорогие)</option>
-                        <option value="start_date" {% if request.GET.sort == 'start_date' %}selected{% endif %}>По дате начала</option>
-                    </select>
-                </div>
-                <div class="col-md-3 mb-2">
-                    <input type="text" name="search" class="form-control" placeholder="Поиск по названию" value="{{ request.GET.search }}">
-                </div>
-                <div class="col-md-2 mb-2">
-                    <input type="number" name="min_budget" class="form-control" placeholder="Бюджет от" value="{{ request.GET.min_budget }}">
-                </div>
-                <div class="col-md-2 mb-2">
-                    <input type="number" name="max_budget" class="form-control" placeholder="Бюджет до" value="{{ request.GET.max_budget }}">
-                </div>
-                <div class="col-md-3 mb-2">
-                    <select name="tags" multiple class="form-select" size="3">
-                        {% for tag in tags %}
-                            <option value="{{ tag.id }}" {% if tag.id|stringformat:"s" in selected_tags %}selected{% endif %}>
-                                {{ tag.name }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                    <small class="text-muted d-block mt-1">Удерживайте Ctrl для выбора нескольких тегов</small>
-                </div>
-                <div class="col-md-1 mb-2">
-                    <button type="submit" class="btn btn-primary w-100">Применить</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-    
-    <div class="row">
-        {% for route in routes %}
-            <div class="col-md-4">
-                <div class="card route-card h-100">
-                    {% if route.image %}
-                        <img src="{{ route.image.url }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ route.title }}">
-                    {% else %}
-                        <div class="card-img-top bg-light text-center py-5" style="height: 200px;">
-                            <span class="text-muted">🌄 Нет фото</span>
-                        </div>
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ route.title }}</h5>
-                        <p class="card-text text-muted">{{ route.countries }} | {{ route.start_date|date:"d.m.Y" }}</p>
-                        <p class="card-text">💰 {{ route.budget|default:"Не указан" }} ₽</p>
-                        <p class="card-text">👥 Откликов: {{ route.responses_count }}</p>
-                        <p class="card-text">👤 <a href="{% url 'profile' route.author.id %}">{{ route.author.username }}</a></p>
-                        <a href="{% url 'route_detail' route.id %}" class="btn btn-primary w-100">Подробнее</a>
+<section class="tb-section">
+    <div class="card">
+        <div class="card-header" style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--tb-orange-soft); color: var(--tb-orange); width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center;">
+                <i class="fas fa-fire"></i>
+            </span>
+            <h5 class="mb-0">Популярные маршруты сейчас</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-2">
+                {% for route in popular_routes %}
+                    <div class="col-md-6">
+                        <a href="{% url 'route_detail' route.id %}" class="d-flex align-items-center gap-2 p-2" style="border-radius: 10px; text-decoration: none; color: var(--tb-text);">
+                            <i class="fas fa-arrow-trend-up" style="color: var(--tb-orange);"></i>
+                            <span style="flex: 1; font-weight: 500;">{{ route.title }}</span>
+                            <small class="text-muted">{{ route.views_count }} просмотров</small>
+                        </a>
                     </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- EXPLORE ROUTES -->
+<section class="tb-section">
+    <div class="tb-section-head">
+        <div>
+            <h2 class="tb-section-title">Исследуй маршруты</h2>
+            <div class="tb-section-sub">Открой для себя идеальное путешествие и попутчиков</div>
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <input type="text" name="search" class="form-control" placeholder="🔍 Поиск по названию" value="{{ request.GET.search }}">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" name="min_budget" class="form-control" placeholder="Бюджет от" value="{{ request.GET.min_budget }}">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" name="max_budget" class="form-control" placeholder="Бюджет до" value="{{ request.GET.max_budget }}">
+                    </div>
+                    <div class="col-md-3">
+                        <select name="tags" multiple class="form-select" size="1">
+                            {% for tag in tags %}
+                                <option value="{{ tag.id }}" {% if tag.id|stringformat:"s" in selected_tags %}selected{% endif %}>{{ tag.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select name="sort" class="form-select">
+                            <option value="-created_at" {% if request.GET.sort == '-created_at' %}selected{% endif %}>Сначала новые</option>
+                            <option value="budget" {% if request.GET.sort == 'budget' %}selected{% endif %}>Дешевле</option>
+                            <option value="-budget" {% if request.GET.sort == '-budget' %}selected{% endif %}>Дороже</option>
+                            <option value="start_date" {% if request.GET.sort == 'start_date' %}selected{% endif %}>По дате</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Применить фильтры</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ROUTE GRID -->
+    <div class="row g-4">
+        {% for route in routes %}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card route-card h-100">
+                    <div style="position: relative;">
+                        {% if route.image %}
+                            <img src="{{ route.image.url }}" class="card-img-top" alt="{{ route.title }}">
+                        {% else %}
+                            <div class="card-img-top d-flex align-items-center justify-content-center" style="background: var(--tb-bg); height: 200px;">
+                                <span style="font-size: 48px; opacity: 0.4;">🌄</span>
+                            </div>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            {% if route in user.favorites.all %}
+                                <a href="{% url 'remove_from_favorites' route.id %}" class="route-fav-btn active" title="Убрать из избранного">
+                                    <i class="fas fa-heart"></i>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'add_to_favorites' route.id %}" class="route-fav-btn" title="В избранное">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            {% endif %}
+                        {% endif %}
+                        {% if forloop.counter == 1 %}
+                            <span class="tb-tag tb-tag-new" style="position: absolute; top: 12px; left: 12px;">New</span>
+                        {% elif route.views_count and route.views_count > 100 %}
+                            <span class="tb-tag tb-tag-popular" style="position: absolute; top: 12px; left: 12px;">Popular</span>
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'route_detail' route.id %}" style="text-decoration: none; color: inherit; flex: 1; display: flex; flex-direction: column;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ route.title }}</h5>
+                            <div class="text-muted mb-2" style="font-size: 13px;">
+                                <i class="fas fa-map-marker-alt"></i> {{ route.countries }}
+                            </div>
+                            <div class="text-muted mb-3" style="font-size: 13px;">
+                                <i class="far fa-calendar"></i>
+                                {{ route.start_date|date:"d M" }}{% if route.end_date %} — {{ route.end_date|date:"d M" }}{% endif %}
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-auto pt-2" style="border-top: 1px solid var(--tb-border);">
+                                <div>
+                                    <div style="font-weight: 700; color: var(--tb-text); font-size: 18px;">
+                                        {{ route.budget|default:"—" }} ₽
+                                    </div>
+                                    <small class="text-muted">за человека</small>
+                                </div>
+                                <div class="text-end">
+                                    <div style="font-weight: 600;">
+                                        <i class="fas fa-users text-muted"></i> {{ route.responses_count }}
+                                    </div>
+                                    <small class="text-muted">откликов</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         {% empty %}
-            <div class="col-12"><div class="alert alert-info">Нет маршрутов. <a href="{% url 'route_create' %}">Создайте первый!</a></div></div>
+            <div class="col-12">
+                <div class="alert alert-info text-center py-5">
+                    <div style="font-size: 48px; margin-bottom: 12px;">🗺️</div>
+                    <h5>Маршрутов пока нет</h5>
+                    <p class="mb-3">Стань первым — создай свой маршрут!</p>
+                    <a href="{% url 'route_create' %}" class="btn btn-primary">Создать маршрут</a>
+                </div>
+            </div>
         {% endfor %}
     </div>
-    
-    <!-- Пагинация -->
+
+    <!-- PAGINATION -->
     {% if routes.has_other_pages %}
     <nav class="mt-4">
         <ul class="pagination justify-content-center">
             {% if routes.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ routes.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">« Предыдущая</a>
+                    <a class="page-link" href="?page={{ routes.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">«</a>
                 </li>
             {% endif %}
-            
             {% for num in routes.paginator.page_range %}
                 {% if routes.number == num %}
                     <li class="page-item active"><span class="page-link">{{ num }}</span></li>
@@ -103,14 +222,14 @@
                     </li>
                 {% endif %}
             {% endfor %}
-            
             {% if routes.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ routes.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Следующая »</a>
+                    <a class="page-link" href="?page={{ routes.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">»</a>
                 </li>
             {% endif %}
         </ul>
     </nav>
     {% endif %}
-</div>
+</section>
+
 {% endblock %}

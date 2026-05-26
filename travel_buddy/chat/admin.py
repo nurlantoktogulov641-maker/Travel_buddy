@@ -1,6 +1,13 @@
 from django.contrib import admin
-from .models import Message
-from .models import PrivateMessage
+from travel_buddy.admin_mixins import SuperuserOnlyAdmin
+from .models import Message, PrivateMessage
 
-admin.site.register(Message)
-admin.site.register(PrivateMessage)
+
+@admin.register(Message)
+class MessageAdmin(SuperuserOnlyAdmin, admin.ModelAdmin):
+    pass
+
+
+@admin.register(PrivateMessage)
+class PrivateMessageAdmin(SuperuserOnlyAdmin, admin.ModelAdmin):
+    pass

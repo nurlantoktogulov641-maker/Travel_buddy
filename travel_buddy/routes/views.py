@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
@@ -158,7 +160,26 @@ def route_detail(request, route_id):
             return redirect('login')
     else:
         form = CommentForm()
-    
+
+    # ===== ДАННЫЕ ДЛЯ КАРТЫ (Leaflet + OpenStreetMap) =====
+    # Готовые координаты из модели (если есть)
+    map_points = route.get_map_points()
+
+    # Названия городов для клиентского геокодинга через Nominatim
+    geocode_names = []
+    if route.start_city:
+        geocode_names.append(route.start_city.strip())
+    if route.waypoints:
+        for point in route.waypoints.split(','):
+            point = point.strip()
+            if point:
+                geocode_names.append(point)
+    if route.end_city:
+        geocode_names.append(route.end_city.strip())
+
+    map_points_json = json.dumps(map_points, ensure_ascii=False)
+    geocode_names_json = json.dumps(geocode_names, ensure_ascii=False)
+
     return render(request, 'routes/detail.html', {
         'route': route,
         'user_response': user_response,
@@ -168,6 +189,8 @@ def route_detail(request, route_id):
         'recent_routes': recent_routes,
         'comments': comments,
         'comment_form': form,
+        'map_points_json': map_points_json,
+        'geocode_names_json': geocode_names_json,
     })
 
 

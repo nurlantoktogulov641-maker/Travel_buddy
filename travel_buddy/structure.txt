@@ -1,0 +1,518 @@
+Структура папок
+Серийный номер тома: 00000032 9C02:2772
+C:.
+|   backup.py
+|   db.sqlite3
+|   manage.py
+|   structure.txt
+|   
++---avatars
+|       WIN_20251114_18_08_54_Pro.jpg
+|       
++---backups
+|       db_backup_20260423_160803.sqlite3
+|       db_backup_20260423_161458.sqlite3
+|       
++---chat
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_initial.py
+|   |   |   0003_initial.py
+|   |   |   0004_privatemessage.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-310.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           0001_initial.cpython-314.pyc
+|   |           0002_alter_message_options_remove_message_created_at_and_more.cpython-310.pyc
+|   |           0002_alter_message_options_remove_message_created_at_and_more.cpython-314.pyc
+|   |           0002_initial.cpython-310.pyc
+|   |           0002_initial.cpython-313.pyc
+|   |           0002_initial.cpython-314.pyc
+|   |           0003_initial.cpython-310.pyc
+|   |           0003_initial.cpython-313.pyc
+|   |           0003_initial.cpython-314.pyc
+|   |           0004_privatemessage.cpython-310.pyc
+|   |           0004_privatemessage.cpython-313.pyc
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   +---templates
+|   |   \---chat
+|   |           chat_list.html
+|   |           private_chat.html
+|   |           room.html
+|   |           
+|   \---__pycache__
+|           admin.cpython-310.pyc
+|           admin.cpython-313.pyc
+|           admin.cpython-314.pyc
+|           apps.cpython-310.pyc
+|           apps.cpython-313.pyc
+|           apps.cpython-314.pyc
+|           models.cpython-310.pyc
+|           models.cpython-313.pyc
+|           models.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           views.cpython-310.pyc
+|           views.cpython-313.pyc
+|           views.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
++---complaints
+|   |   admin.py
+|   |   apps.py
+|   |   forms.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-310.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           0001_initial.cpython-314.pyc
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   +---templates
+|   |   \---complaints
+|   |           complain.html
+|   |           
+|   \---__pycache__
+|           admin.cpython-310.pyc
+|           admin.cpython-313.pyc
+|           admin.cpython-314.pyc
+|           apps.cpython-310.pyc
+|           apps.cpython-313.pyc
+|           apps.cpython-314.pyc
+|           forms.cpython-310.pyc
+|           forms.cpython-313.pyc
+|           forms.cpython-314.pyc
+|           models.cpython-310.pyc
+|           models.cpython-313.pyc
+|           models.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           views.cpython-310.pyc
+|           views.cpython-313.pyc
+|           views.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
++---logs
+|       travel_buddy.log
+|       
++---media
+|   +---avatars
+|   |       IMG_20240729_214656.jpg
+|   |       IMG_20240729_214656_w5UiTSu.jpg
+|   |       IMG_5068.JPG
+|   |       VID_20231201_173532.mp4
+|   |       WIN_20251114_18_09_10_Pro.jpg
+|   |       
+|   \---routes
+|           11.PNG
+|           22.PNG
+|           22_ij2f2MD.PNG
+|           44.PNG
+|           55.PNG
+|           55_duCM0dA.PNG
+|           55__копия.PNG
+|           IMG_20211013_160636.jpg
+|           IMG_9763.JPG
+|           IMG_9764.JPG
+|           IMG_9764__копия.JPG
+|           photo_2026-04-08_18-26-15.jpg
+|           WIN_20251114_18_09_10_Pro.jpg
+|           WIN_20251114_18_09_10_Pro_gTH3u79.jpg
+|           WIN_20251114_18_09_10_Pro_sEKrLSQ.jpg
+|           yt2phD5OEro.jpg
+|           Снимок2гис.PNG
+|           Снимок2гис_DzWOzJk.PNG
+|           Снимок2гис_Fvjduyy.PNG
+|           Снимок2гис_N8A8fmV.PNG
+|           Снимок2гис_p4xgs9b.PNG
+|           Снимок2гис_pc5fSeh.PNG
+|           Снимок2гис_XEhjm43.PNG
+|           Снимок2гис_Z4J1L2w.PNG
+|           Снимок2гис__копия.PNG
+|           Снимок2гис__копия_tZLMTCh.PNG
+|           Снимок_для_2.PNG
+|           Снимок_для_2_giiE3L9.PNG
+|           Снимок_для_2_IF5Bz4Z.PNG
+|           Снимок_для_2_mSHWCYt.PNG
+|           Снимок_для_2_umLsxE9.PNG
+|           Снимок_для_2_VRTWRDL.PNG
+|           Снимок_для_2__копия.PNG
+|           
++---responses
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_initial.py
+|   |   |   0003_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-310.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           0001_initial.cpython-314.pyc
+|   |           0002_alter_response_options_alter_response_created_at_and_more.cpython-310.pyc
+|   |           0002_alter_response_options_alter_response_created_at_and_more.cpython-314.pyc
+|   |           0002_initial.cpython-310.pyc
+|   |           0002_initial.cpython-313.pyc
+|   |           0002_initial.cpython-314.pyc
+|   |           0003_initial.cpython-310.pyc
+|   |           0003_initial.cpython-313.pyc
+|   |           0003_initial.cpython-314.pyc
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-310.pyc
+|           admin.cpython-313.pyc
+|           admin.cpython-314.pyc
+|           apps.cpython-310.pyc
+|           apps.cpython-313.pyc
+|           apps.cpython-314.pyc
+|           models.cpython-310.pyc
+|           models.cpython-313.pyc
+|           models.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           views.cpython-310.pyc
+|           views.cpython-313.pyc
+|           views.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
++---reviews
+|   |   admin.py
+|   |   apps.py
+|   |   forms.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-310.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           0001_initial.cpython-314.pyc
+|   |           0002_initial.cpython-310.pyc
+|   |           0002_initial.cpython-313.pyc
+|   |           0002_initial.cpython-314.pyc
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   +---templates
+|   |   |   base.html
+|   |   |   
+|   |   \---reviews
+|   |           create.html
+|   |           edit.html
+|   |           
+|   \---__pycache__
+|           admin.cpython-310.pyc
+|           admin.cpython-313.pyc
+|           admin.cpython-314.pyc
+|           apps.cpython-310.pyc
+|           apps.cpython-313.pyc
+|           apps.cpython-314.pyc
+|           forms.cpython-310.pyc
+|           forms.cpython-313.pyc
+|           forms.cpython-314.pyc
+|           models.cpython-310.pyc
+|           models.cpython-313.pyc
+|           models.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           views.cpython-310.pyc
+|           views.cpython-313.pyc
+|           views.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
++---routes
+|   |   admin.py
+|   |   apps.py
+|   |   forms.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   utils.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---management
+|   |   |   __init__.py
+|   |   |   
+|   |   +---commands
+|   |   |   |   backupdb.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           backupdb.cpython-314.pyc
+|   |   |           __init__.cpython-314.pyc
+|   |   |           
+|   |   \---__pycache__
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_initial.py
+|   |   |   0003_route_image.py
+|   |   |   0004_route_latitude_route_longitude.py
+|   |   |   0005_remove_route_images_route_places.py
+|   |   |   0006_route_location.py
+|   |   |   0007_alter_route_location.py
+|   |   |   0008_routeimage.py
+|   |   |   0009_favorite.py
+|   |   |   0010_route_end_city_route_start_city_route_waypoints.py
+|   |   |   0011_route_city.py
+|   |   |   0012_routecomment_routelike.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-310.pyc
+|   |           0001_initial.cpython-313.pyc
+|   |           0001_initial.cpython-314.pyc
+|   |           0002_alter_tag_name_alter_tag_slug.cpython-310.pyc
+|   |           0002_alter_tag_name_alter_tag_slug.cpython-314.pyc
+|   |           0002_initial.cpython-310.pyc
+|   |           0002_initial.cpython-313.pyc
+|   |           0002_initial.cpython-314.pyc
+|   |           0003_alter_tag_slug.cpython-310.pyc
+|   |           0003_alter_tag_slug.cpython-314.pyc
+|   |           0003_route_image.cpython-310.pyc
+|   |           0003_route_image.cpython-313.pyc
+|   |           0003_route_image.cpython-314.pyc
+|   |           0004_alter_route_author_alter_route_budget_and_more.cpython-310.pyc
+|   |           0004_alter_route_author_alter_route_budget_and_more.cpython-314.pyc
+|   |           0004_route_latitude_route_longitude.cpython-310.pyc
+|   |           0004_route_latitude_route_longitude.cpython-313.pyc
+|   |           0004_route_latitude_route_longitude.cpython-314.pyc
+|   |           0005_alter_route_options_alter_tag_options_and_more.cpython-310.pyc
+|   |           0005_alter_route_options_alter_tag_options_and_more.cpython-314.pyc
+|   |           0005_remove_route_images_route_places.cpython-310.pyc
+|   |           0005_remove_route_images_route_places.cpython-313.pyc
+|   |           0005_remove_route_images_route_places.cpython-314.pyc
+|   |           0006_route_location.cpython-310.pyc
+|   |           0006_route_location.cpython-313.pyc
+|   |           0006_route_location.cpython-314.pyc
+|   |           0007_alter_route_location.cpython-310.pyc
+|   |           0007_alter_route_location.cpython-313.pyc
+|   |           0007_alter_route_location.cpython-314.pyc
+|   |           0008_routeimage.cpython-310.pyc
+|   |           0008_routeimage.cpython-313.pyc
+|   |           0008_routeimage.cpython-314.pyc
+|   |           0009_favorite.cpython-310.pyc
+|   |           0009_favorite.cpython-313.pyc
+|   |           0009_favorite.cpython-314.pyc
+|   |           0010_route_end_city_route_start_city_route_waypoints.cpython-310.pyc
+|   |           0010_route_end_city_route_start_city_route_waypoints.cpython-313.pyc
+|   |           0010_route_end_city_route_start_city_route_waypoints.cpython-314.pyc
+|   |           0011_route_city.cpython-310.pyc
+|   |           0011_route_city.cpython-313.pyc
+|   |           0011_route_city.cpython-314.pyc
+|   |           0012_routecomment_routelike.cpython-310.pyc
+|   |           0012_routecomment_routelike.cpython-313.pyc
+|   |           __init__.cpython-310.pyc
+|   |           __init__.cpython-313.pyc
+|   |           __init__.cpython-314.pyc
+|   |           
+|   +---templates
+|   |   \---routes
+|   |           base.html
+|   |           create.html
+|   |           create_with_2gis.html
+|   |           detail.html
+|   |           edit.html
+|   |           home.html
+|   |           my_favorites.html
+|   |           participants.html
+|   |           
+|   \---__pycache__
+|           admin.cpython-310.pyc
+|           admin.cpython-313.pyc
+|           admin.cpython-314.pyc
+|           apps.cpython-310.pyc
+|           apps.cpython-313.pyc
+|           apps.cpython-314.pyc
+|           forms.cpython-310.pyc
+|           forms.cpython-313.pyc
+|           forms.cpython-314.pyc
+|           models.cpython-310.pyc
+|           models.cpython-313.pyc
+|           models.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           utils.cpython-310.pyc
+|           utils.cpython-313.pyc
+|           utils.cpython-314.pyc
+|           views.cpython-310.pyc
+|           views.cpython-313.pyc
+|           views.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
++---static
+|   \---css
+|           dark-theme.css
+|           design-system.css
+|           
++---templates
+|   |   base.html
+|   |   
+|   +---admin
+|   |       dashboard.html
+|   |       index.html
+|   |       
+|   \---registration
+|           login.html
+|           password_reset.html
+|           password_reset_complete.html
+|           password_reset_confirm.html
+|           password_reset_done.html
+|           
++---travel_buddy
+|   |   asgi.py
+|   |   settings.py
+|   |   urls.py
+|   |   utils.py
+|   |   views.py
+|   |   wsgi.py
+|   |   __init__.py
+|   |   
+|   +---templates
+|   |   |   base.html
+|   |   |   
+|   |   +---emails
+|   |   |       base_email.html
+|   |   |       new_response.html
+|   |   |       response_status_changed.html
+|   |   |       
+|   |   \---registration
+|   |           login.html
+|   |           
+|   \---__pycache__
+|           settings.cpython-310.pyc
+|           settings.cpython-313.pyc
+|           settings.cpython-314.pyc
+|           urls.cpython-310.pyc
+|           urls.cpython-313.pyc
+|           urls.cpython-314.pyc
+|           utils.cpython-310.pyc
+|           utils.cpython-313.pyc
+|           utils.cpython-314.pyc
+|           views.cpython-310.pyc
+|           wsgi.cpython-310.pyc
+|           wsgi.cpython-313.pyc
+|           wsgi.cpython-314.pyc
+|           __init__.cpython-310.pyc
+|           __init__.cpython-313.pyc
+|           __init__.cpython-314.pyc
+|           
+\---users
+    |   admin.py
+    |   apps.py
+    |   forms.py
+    |   middleware.py
+    |   models.py
+    |   tests.py
+    |   urls.py
+    |   views.py
+    |   __init__.py
+    |   
+    +---migrations
+    |   |   0001_initial.py
+    |   |   0002_user_total_completed_trips_user_trust_level.py
+    |   |   __init__.py
+    |   |   
+    |   \---__pycache__
+    |           0001_initial.cpython-310.pyc
+    |           0001_initial.cpython-313.pyc
+    |           0001_initial.cpython-314.pyc
+    |           0002_user_total_completed_trips_user_trust_level.cpython-313.pyc
+    |           __init__.cpython-310.pyc
+    |           __init__.cpython-313.pyc
+    |           __init__.cpython-314.pyc
+    |           
+    +---templates
+    |   \---users
+    |           my_responses.html
+    |           my_routes.html
+    |           profile.html
+    |           profile_edit.html
+    |           register.html
+    |           
+    \---__pycache__
+            admin.cpython-310.pyc
+            admin.cpython-313.pyc
+            admin.cpython-314.pyc
+            apps.cpython-310.pyc
+            apps.cpython-313.pyc
+            apps.cpython-314.pyc
+            forms.cpython-310.pyc
+            forms.cpython-313.pyc
+            forms.cpython-314.pyc
+            middleware.cpython-313.pyc
+            models.cpython-310.pyc
+            models.cpython-313.pyc
+            models.cpython-314.pyc
+            urls.cpython-310.pyc
+            urls.cpython-313.pyc
+            urls.cpython-314.pyc
+            views.cpython-310.pyc
+            views.cpython-313.pyc
+            views.cpython-314.pyc
+            __init__.cpython-310.pyc
+            __init__.cpython-313.pyc
+            __init__.cpython-314.pyc
+            

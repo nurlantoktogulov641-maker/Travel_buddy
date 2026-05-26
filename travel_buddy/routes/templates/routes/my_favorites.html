@@ -3,71 +3,79 @@
 {% block title %}Избранные маршруты - Travel Buddy{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="mb-4">❤️ Избранные маршруты</h2>
-    
-    {% if favorites %}
-        <div class="row">
-            {% for favorite in favorites %}
-                <div class="col-md-4 mb-4">
-                    <div class="card route-card h-100">
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+    <div>
+        <h1 style="font-size: 26px; margin: 0;">
+            <i class="fas fa-heart" style="color: var(--tb-danger);"></i> Избранное
+        </h1>
+        <div class="text-muted" style="font-size: 14px;">Маршруты, которые ты хотел бы пройти</div>
+    </div>
+</div>
+
+{% if favorites %}
+    <div class="row g-4">
+        {% for favorite in favorites %}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card route-card h-100">
+                    <div style="position: relative;">
                         {% if favorite.route.image %}
-                            <img src="{{ favorite.route.image.url }}" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <img src="{{ favorite.route.image.url }}" class="card-img-top" alt="{{ favorite.route.title }}">
                         {% else %}
-                            <div class="card-img-top bg-light text-center py-5" style="height: 180px;">
-                                <span class="text-muted">🌄 Нет фото</span>
+                            <div class="card-img-top d-flex align-items-center justify-content-center" style="background: var(--tb-bg); height: 200px;">
+                                <span style="font-size: 48px; opacity: 0.4;">🌄</span>
                             </div>
                         {% endif %}
-                        <div class="card-body">
+                        <a href="{% url 'remove_from_favorites' favorite.route.id %}" class="route-fav-btn active" title="Удалить из избранного">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                    <a href="{% url 'route_detail' favorite.route.id %}" style="text-decoration: none; color: inherit; flex: 1; display: flex; flex-direction: column;">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ favorite.route.title }}</h5>
-                            <p class="card-text text-muted">{{ favorite.route.countries }} | {{ favorite.route.start_date|date:"d.m.Y" }}</p>
-                            <p class="card-text">💰 {{ favorite.route.budget|default:"Не указан" }} ₽</p>
-                            <p class="card-text">👤 {{ favorite.route.author.username }}</p>
-                            <div class="mt-3">
-                                <a href="{% url 'route_detail' favorite.route.id %}" class="btn btn-primary btn-sm">Подробнее</a>
-                                <a href="{% url 'remove_from_favorites' favorite.route.id %}" class="btn btn-danger btn-sm">❤️ Удалить</a>
+                            <div class="text-muted mb-1" style="font-size: 13px;">
+                                <i class="fas fa-map-marker-alt"></i> {{ favorite.route.countries }}
+                            </div>
+                            <div class="text-muted mb-3" style="font-size: 13px;">
+                                <i class="far fa-calendar"></i> {{ favorite.route.start_date|date:"d M" }}
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-auto pt-2" style="border-top: 1px solid var(--tb-border);">
+                                <div style="font-weight: 700; color: var(--tb-text); font-size: 18px;">{{ favorite.route.budget|default:"—" }} ₽</div>
+                                <small class="text-muted">{{ favorite.route.author.username }}</small>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if favorites.has_other_pages %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if favorites.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ favorites.previous_page_number }}">«</a></li>
+            {% endif %}
+            {% for num in favorites.paginator.page_range %}
+                {% if favorites.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > favorites.number|add:'-3' and num < favorites.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
             {% endfor %}
-        </div>
-        
-        <!-- Улучшенная пагинация -->
-        {% if favorites.has_other_pages %}
-        <nav aria-label="Пагинация">
-            <ul class="pagination justify-content-center">
-                {% if favorites.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ favorites.previous_page_number }}">« Назад</a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled"><span class="page-link">« Назад</span></li>
-                {% endif %}
-                
-                {% for num in favorites.paginator.page_range %}
-                    {% if favorites.number == num %}
-                        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
-                    {% elif num > favorites.number|add:'-3' and num < favorites.number|add:'3' %}
-                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                
-                {% if favorites.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ favorites.next_page_number }}">Вперёд »</a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled"><span class="page-link">Вперёд »</span></li>
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
-        
-    {% else %}
-        <div class="alert alert-info">
-            У вас пока нет избранных маршрутов. Добавляйте маршруты в избранное, нажимая ❤️
-        </div>
+            {% if favorites.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ favorites.next_page_number }}">»</a></li>
+            {% endif %}
+        </ul>
+    </nav>
     {% endif %}
-</div>
+{% else %}
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <div style="font-size: 56px; margin-bottom: 12px;">💔</div>
+            <h5>У тебя пока нет избранных маршрутов</h5>
+            <p class="text-muted">Добавляй маршруты в избранное, нажимая на сердечко</p>
+            <a href="{% url 'home' %}" class="btn btn-primary mt-2">Найти маршрут</a>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}

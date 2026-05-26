@@ -1,26 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row justify-content-center fade-in">
-    <div class="col-md-8">
-        <div class="card auth-card">
+<div class="row justify-content-center">
+    <div class="col-md-9 col-lg-8">
+        <div class="mb-3">
+            <a href="{% url 'home' %}" style="color: var(--tb-text-muted); font-size: 14px;">
+                <i class="fas fa-arrow-left"></i> К маршрутам
+            </a>
+        </div>
+        <div class="card">
             <div class="card-header">
-                <h3 class="mb-0">✈️ Создать новый маршрут</h3>
-                <p class="mb-0 mt-2 text-white-50">Поделись своим путешествием</p>
+                <h3 style="font-size: 22px; margin: 0;">
+                    <i class="fas fa-route text-primary"></i> Создать маршрут
+                </h3>
+                <div class="text-muted mt-1" style="font-size: 14px;">Поделись своим путешествием с попутчиками</div>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         <div class="mb-3">
-                            <label class="form-label fw-bold">{{ field.label }}</label>
+                            <label class="form-label">{{ field.label }}</label>
                             {{ field }}
+                            {% if field.help_text %}
+                                <div class="text-muted" style="font-size: 12.5px; margin-top: 4px;">{{ field.help_text }}</div>
+                            {% endif %}
                             {% if field.errors %}
                                 <div class="text-danger small mt-1">{{ field.errors }}</div>
                             {% endif %}
                         </div>
                     {% endfor %}
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                    <div class="d-flex gap-2 justify-content-end mt-4">
                         <a href="{% url 'home' %}" class="btn btn-secondary">Отмена</a>
                         <button type="submit" class="btn btn-primary">Создать маршрут</button>
                     </div>

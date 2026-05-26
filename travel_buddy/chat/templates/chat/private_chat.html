@@ -2,45 +2,118 @@
 
 {% block title %}Чат с {{ receiver.username }} - Travel Buddy{% endblock %}
 
+{% block toasts %}{% endblock %}
+
 {% block content %}
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">💬 Личный чат с {{ receiver.username }}</h4>
-            <a href="{% url 'profile' receiver.id %}" class="text-white">← Вернуться к профилю</a>
+<div class="mb-3">
+    <a href="{% url 'chat_list' %}" style="color: var(--tb-text-muted); font-size: 14px;">
+        <i class="fas fa-arrow-left"></i> Назад к сообщениям
+    </a>
+</div>
+
+<div class="card chat-card">
+    <div class="card-header">
+        <div style="position: relative;">
+            {% if receiver.avatar %}
+                <img src="{{ receiver.avatar.url }}" class="chat-avatar" alt="{{ receiver.username }}">
+            {% else %}
+                <div class="chat-avatar">{{ receiver.username|make_list|first|upper }}</div>
+            {% endif %}
+            <span class="chat-status-dot" style="position: absolute; bottom: 0; right: 0;" title="в сети"></span>
         </div>
-        <div class="card-body" style="height: 400px; overflow-y: scroll;">
-            {% for msg in messages %}
-                <div class="mb-3 {% if msg.sender == user %}text-end{% endif %}">
-                    <div class="d-inline-block p-2 rounded {% if msg.sender == user %}bg-primary text-white{% else %}bg-light{% endif %}" style="max-width: 70%;">
-                        <strong>{{ msg.sender.username }}:</strong> {{ msg.text }}
-                        <br><small class="{% if msg.sender == user %}text-white-50{% else %}text-muted{% endif %}">{{ msg.created_at|date:"d.m.Y H:i" }}</small>
-                    </div>
+        <div class="flex-grow-1">
+            <div style="font-weight: 600;">{{ receiver.username }}</div>
+            <small class="text-muted">
+                <a href="{% url 'profile' receiver.id %}">Открыть профиль</a>
+            </small>
+        </div>
+        <a href="{% url 'profile' receiver.id %}" class="tb-nav-icon-btn" title="Профиль">
+            <i class="fas fa-user"></i>
+        </a>
+    </div>
+    <div class="chat-body" id="chatMessages">
+        {% for msg in messages %}
+            <div class="msg-row {% if msg.sender == user %}msg-row-self{% endif %}">
+                <div class="chat-bubble {% if msg.sender == user %}bg-primary text-white{% else %}bg-light{% endif %}">
+                    <div class="bubble-text">{{ msg.text }}</div>
+                    <small class="bubble-time" title="{{ msg.created_at|date:'d.m.Y H:i' }}">{{ msg.created_at|date:"H:i" }}</small>
                 </div>
-            {% empty %}
-                <p class="text-center text-muted">Нет сообщений. Напишите первое!</p>
-            {% endfor %}
-        </div>
-        <div class="card-footer">
-            <form method="post">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input type="text" name="text" class="form-control" placeholder="Введите сообщение..." required>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        {% empty %}
+            <div class="chat-empty">
+                <div class="chat-empty-icon">💬</div>
+                <div>Напиши первое сообщение</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="chat-input">
+        <form method="post" id="chatForm" class="d-flex gap-2 w-100">
+            {% csrf_token %}
+            <input type="text" name="text" class="form-control" placeholder="Напишите сообщение…" autocomplete="off" required>
+            <button type="submit" class="send-btn" aria-label="Отправить">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
     </div>
 </div>
 
 <script>
-    // Отмечаем сообщения как прочитанные при открытии чата
-    fetch('/chat/mark-read/{{ receiver.id }}/')
-        .then(() => {
-            // Обновляем счётчик в шапке
-            if (window.parent && window.parent.updateUnreadCount) {
-                window.parent.updateUnreadCount();
+    fetch('/chat/mark-read/{{ receiver.id }}/').then(() => {
+        if (window.parent && window.parent.updateUnreadCount) window.parent.updateUnreadCount();
+    });
+</script>
+
+<script>
+(function () {
+    var box = document.getElementById('chatMessages');
+    var form = document.getElementById('chatForm');
+    var input = form.querySelector('input[name="text"]');
+
+    function scrollToBottom() { if (box) box.scrollTop = box.scrollHeight; }
+    scrollToBottom();
+
+    function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(text || ''));
+        return div.innerHTML;
+    }
+    function appendMessage(m) {
+        var empty = box.querySelector('.chat-empty');
+        if (empty) empty.remove();
+        var row = document.createElement('div');
+        row.className = 'msg-row' + (m.is_self ? ' msg-row-self' : '');
+        var bubble = document.createElement('div');
+        bubble.className = 'chat-bubble ' + (m.is_self ? 'bg-primary text-white' : 'bg-light');
+        bubble.innerHTML =
+            '<div class="bubble-text">' + escapeHtml(m.text) + '</div>' +
+            '<small class="bubble-time">' + escapeHtml(m.created_at) + '</small>';
+        row.appendChild(bubble);
+        box.appendChild(row);
+        scrollToBottom();
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = input.value.trim();
+        if (!text) return;
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        fetch(form.action || window.location.href, {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            body: new FormData(form)
+        })
+        .then(function (resp) { if (!resp.ok) throw new Error(); return resp.json(); })
+        .then(function (data) {
+            if (data.status === 'ok') {
+                appendMessage(data.message);
+                input.value = '';
+                input.focus();
             }
-        });
+        })
+        .catch(function () { form.submit(); })
+        .finally(function () { btn.disabled = false; });
+    });
+})();
 </script>
 {% endblock %}

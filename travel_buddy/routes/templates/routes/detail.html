@@ -1,35 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="fade-in">
-    <div class="card route-card">
-        <div class="card-header bg-transparent border-0 pt-4">
-            <h2 class="display-6">{{ route.title }}</h2>
-            <div class="d-flex gap-3 mt-2">
-                <span>
-                    <i class="bi bi-person"></i> Автор: <a href="{% url 'profile' route.author.id %}" class="text-decoration-none fw-bold">{{ route.author.username }}</a>
-                    {% if user.is_authenticated and user != route.author %}
-                        <a href="{% url 'private_chat' route.author.id %}" class="btn btn-sm btn-outline-primary ms-2">✉️ Написать автору</a>
-                    {% endif %}
-                </span>
-                <span><i class="bi bi-eye"></i> {{ route.views_count }} просмотров</span>
-            </div>
-        </div>
-        <div class="card-body">
-            
-            <!-- КАРУСЕЛЬ ИЗОБРАЖЕНИЙ -->
+<div class="mb-3">
+    <a href="{% url 'home' %}" style="color: var(--tb-text-muted); font-size: 14px;">
+        <i class="fas fa-arrow-left"></i> Назад к маршрутам
+    </a>
+</div>
+
+<div class="row g-4">
+    <!-- LEFT: image + content -->
+    <div class="col-lg-8">
+        <div class="card">
+            <!-- IMAGE GALLERY -->
             {% if route.image or route.extra_images.all %}
-            <div class="mb-4">
+            <div style="position: relative;">
                 <div id="routeCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded" style="border-radius: 20px; overflow: hidden;">
+                    <div class="carousel-inner" style="border-radius: var(--tb-radius-lg) var(--tb-radius-lg) 0 0; overflow: hidden;">
                         {% if route.image %}
                         <div class="carousel-item active">
-                            <img src="{{ route.image.url }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                            <img src="{{ route.image.url }}" class="d-block w-100" style="height: 420px; object-fit: cover;">
                         </div>
                         {% endif %}
                         {% for img in route.extra_images.all %}
                         <div class="carousel-item">
-                            <img src="{{ img.image.url }}" class="d-block w-100" style="height: 400px; object-fit: cover;">
+                            <img src="{{ img.image.url }}" class="d-block w-100" style="height: 420px; object-fit: cover;">
                         </div>
                         {% endfor %}
                     </div>
@@ -40,340 +34,375 @@
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
+                {% if user.is_authenticated and user != route.author %}
+                    {% if route in user.favorites.all %}
+                        <a href="{% url 'remove_from_favorites' route.id %}" class="route-fav-btn active" title="Убрать из избранного">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'add_to_favorites' route.id %}" class="route-fav-btn" title="В избранное">
+                            <i class="far fa-heart"></i>
+                        </a>
+                    {% endif %}
+                {% endif %}
             </div>
             {% endif %}
-            
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5>🌍 Страны</h5>
-                        <p>{{ route.countries }}</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="info-box">
-                        <h5>📅 Даты</h5>
-                        <p>{{ route.start_date|date:"d.m.Y" }} - {{ route.end_date|date:"d.m.Y" }}</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="info-box mb-4">
-                <h5>💰 Бюджет</h5>
-                <p class="fs-4 fw-bold text-success">{{ route.budget|default:"Не указан" }} ₽</p>
-            </div>
-            
-            <div class="info-box mb-4">
-                <h5>📝 Описание</h5>
-                <p>{{ route.description|linebreaks }}</p>
-            </div>
-            
-            <!-- ЯНДЕКС.КАРТА С МАРШРУТОМ -->
-<div class="info-box mb-4">
-    <h5>🗺️ Карта маршрута</h5>
-    
-    {% if route.start_city or route.end_city %}
-        <div id="yandexMap" style="height: 500px; border-radius: 15px;"></div>
-        
-        <div id="routeInfo" class="mt-3" style="display: none;">
-            <div class="alert alert-info">
-                <strong>📊 Информация о маршруте:</strong>
-                <span id="distanceInfo"></span>
-                <span id="timeInfo"></span>
-            </div>
-        </div>
-        
-        <div id="mapError" class="alert alert-warning mt-3" style="display: none;">
-            ⚠️ Не удалось загрузить карту. Проверьте подключение к интернету.
-        </div>
-        
-        {% if route.waypoints %}
-        <div class="mt-3">
-            <strong>📌 Промежуточные точки:</strong>
-            <ul class="mt-2">
-                {% for point in route.waypoints.split %}
-                    <li>{{ point }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        
-        {% if route.places %}
-        <div class="mt-3">
-            <strong>⭐ Достопримечательности:</strong>
-            <ul class="mt-2">
-                {% for place in route.places %}
-                    <li>{{ place.name }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-        <script>
-            // Функция для экранирования HTML
-            function escapeHtml(text) {
-                if (!text) return '';
-                var div = document.createElement('div');
-                div.appendChild(document.createTextNode(text));
-                return div.innerHTML;
-            }
-            
-            // Таймер для проверки загрузки карты
-            var mapLoadTimeout = setTimeout(function() {
-                var mapDiv = document.getElementById('yandexMap');
-                if (mapDiv && mapDiv.innerHTML === '') {
-                    document.getElementById('mapError').style.display = 'block';
-                }
-            }, 10000);
-            
-            ymaps.ready(init);
-            
-            function init() {
-                clearTimeout(mapLoadTimeout);
-                
-                try {
-                    var map = new ymaps.Map("yandexMap", {
-                        center: [55.76, 37.64],
-                        zoom: 4,
-                        controls: ['zoomControl', 'fullscreenControl']
-                    });
-                    
-                    // СБОР ВСЕХ ТОЧЕК ДЛЯ МАРШРУТА
-                    var routePoints = [];
-                    
-                    // Город отправления
-                    {% if route.start_city %}
-                        routePoints.push(escapeHtml("{{ route.start_city }}"));
-                    {% endif %}
-                    
-                    // Промежуточные точки
-                    {% if route.waypoints %}
-                        var waypointsList = "{{ route.waypoints }}".split(',');
-                        for (var i = 0; i < waypointsList.length; i++) {
-                            var point = waypointsList[i].trim();
-                            if (point) routePoints.push(escapeHtml(point));
-                        }
-                    {% endif %}
-                    
-                    // Город назначения
-                    {% if route.end_city %}
-                        routePoints.push(escapeHtml("{{ route.end_city }}"));
-                    {% endif %}
-                    
-                    // ПОСТРОЕНИЕ МАРШРУТА С РАССТОЯНИЕМ
-                    if (routePoints.length >= 2) {
-                        var geoCodes = [];
-                        var promises = [];
-                        var placemarks = [];
-                        
-                        routePoints.forEach(function(point, index) {
-                            var promise = ymaps.geocode(point, { results: 1 });
-                            promises.push(promise);
-                            promise.then(function(res) {
-                                var geoObject = res.geoObjects.get(0);
-                                if (geoObject) {
-                                    var coords = geoObject.geometry.getCoordinates();
-                                    geoCodes.push(coords);
-                                    
-                                    // Маркер города с разными цветами
-                                    var preset = 'islands#blueTourismIcon';
-                                    if (index === 0) preset = 'islands#greenTourismIcon';
-                                    if (index === routePoints.length - 1) preset = 'islands#redTourismIcon';
-                                    
-                                    var placemark = new ymaps.Placemark(coords, {
-                                        balloonContent: '<b>' + point + '</b>'
-                                    }, {
-                                        preset: preset
-                                    });
-                                    map.geoObjects.add(placemark);
-                                    placemarks.push(placemark);
-                                }
-                            }).catch(function(error) {
-                                console.error('Ошибка геокодирования для ' + point + ':', error);
-                            });
-                        });
-                        
-                        Promise.all(promises).then(function() {
-                            if (geoCodes.length >= 2) {
-                                var multiRoute = new ymaps.multiRouter.MultiRoute({
-                                    referencePoints: geoCodes,
-                                    params: { routingMode: 'auto' }
-                                }, { 
-                                    boundsAutoApply: true,
-                                    wayPointVisible: false
-                                });
-                                
-                                // Получение информации о маршруте
-                                multiRoute.model.events.add("requestsuccess", function() {
-                                    var routes = multiRoute.getActiveRoute();
-                                    if (routes) {
-                                        var distance = routes.getLength();
-                                        var time = routes.getTime();
-                                        
-                                        var distanceKm = (distance / 1000).toFixed(1);
-                                        var timeHours = Math.floor(time / 60);
-                                        var timeMinutes = time % 60;
-                                        
-                                        var routeInfoDiv = document.getElementById('routeInfo');
-                                        if (routeInfoDiv) {
-                                            routeInfoDiv.style.display = 'block';
-                                            document.getElementById('distanceInfo').innerHTML = ' 📍 Расстояние: ' + distanceKm + ' км';
-                                            document.getElementById('timeInfo').innerHTML = ' ⏱️ Время в пути: ' + timeHours + ' ч ' + timeMinutes + ' мин';
-                                        }
-                                    }
-                                });
-                                
-                                multiRoute.model.events.add("requesterror", function() {
-                                    console.error('Ошибка построения маршрута');
-                                });
-                                
-                                map.geoObjects.add(multiRoute);
-                            } else {
-                                document.getElementById('mapError').innerHTML = '⚠️ Недостаточно точек для построения маршрута. Укажите начальный и конечный город.';
-                                document.getElementById('mapError').style.display = 'block';
-                            }
-                        });
-                    } else {
-                        document.getElementById('mapError').innerHTML = '⚠️ Укажите хотя бы начальный и конечный город для отображения маршрута.';
-                        document.getElementById('mapError').style.display = 'block';
-                    }
-                    
-                    // ДОСТОПРИМЕЧАТЕЛЬНОСТИ (красные маркеры)
-                    {% if route.places %}
-                        var places = {{ route.places|safe }};
-                        if (places && places.length) {
-                            places.forEach(function(place) {
-                                if (place.lat && place.lng) {
-                                    var placemark = new ymaps.Placemark([parseFloat(place.lat), parseFloat(place.lng)], {
-                                        balloonContent: '<b>' + escapeHtml(place.name) + '</b>'
-                                    }, {
-                                        preset: 'islands#redDotIcon'
-                                    });
-                                    map.geoObjects.add(placemark);
-                                } else if (place.name) {
-                                    ymaps.geocode(escapeHtml(place.name), { results: 1 }).then(function(res) {
-                                        var geoObject = res.geoObjects.get(0);
-                                        if (geoObject) {
-                                            var coords = geoObject.geometry.getCoordinates();
-                                            var placemark = new ymaps.Placemark(coords, {
-                                                balloonContent: '<b>' + escapeHtml(place.name) + '</b>'
-                                            }, {
-                                                preset: 'islands#redDotIcon'
-                                            });
-                                            map.geoObjects.add(placemark);
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                    {% endif %}
-                    
-                    // Если нет маршрутов, показываем центр России
-                    if (geoCodes.length === 0 && (!places || places.length === 0)) {
-                        map.setCenter([55.76, 37.64], 4);
-                    }
-                    
-                } catch (error) {
-                    console.error('Ошибка инициализации карты:', error);
-                    document.getElementById('mapError').style.display = 'block';
-                }
-            }
-        </script>
-    {% else %}
-        <div class="alert alert-secondary">
-            <i class="bi bi-geo-alt"></i> Для отображения карты укажите город отправления и назначения при создании маршрута.
-        </div>
-    {% endif %}
-</div>
-            
-            <!-- НЕДАВНО ПРОСМОТРЕННЫЕ (перемещено внутрь) -->
-            {% if recent_routes %}
-            <div class="mt-5">
-                <h3>🕐 Недавно просмотренные</h3>
-                <div class="row">
-                    {% for recent_route in recent_routes|slice:":4" %}
-                    <div class="col-md-3 mb-3">
-                        <div class="card h-100">
-                            {% if recent_route.image %}
-                                <img src="{{ recent_route.image.url }}" class="card-img-top" alt="{{ recent_route.title }}" style="height: 120px; object-fit: cover;">
-                            {% endif %}
-                            <div class="card-body">
-                                <h6 class="card-title">{{ recent_route.title|truncatechars:30 }}</h6>
-                                <small class="text-muted">{{ recent_route.budget }} ₽</small>
-                                <a href="{% url 'route_detail' recent_route.id %}" class="btn btn-sm btn-outline-primary mt-2">Смотреть</a>
-                            </div>
+
+            <div class="card-body">
+                <!-- TITLE & META -->
+                <div class="d-flex align-items-start justify-content-between gap-3 mb-3 flex-wrap">
+                    <div>
+                        <h1 class="display-6 mb-2">{{ route.title }}</h1>
+                        <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size: 14px;">
+                            <span class="tb-tag tb-tag-featured">
+                                <i class="fas fa-star"></i> {{ route.author.rating|default:"5.0" }}
+                            </span>
+                            <span class="text-muted"><i class="fas fa-eye"></i> {{ route.views_count }} просмотров</span>
+                            <span class="text-muted"><i class="fas fa-heart"></i> {{ route.likes.count }} лайков</span>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+
+                <!-- META ROW -->
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="tb-tag tb-tag-new">
+                        <i class="fas fa-map-marker-alt"></i> {{ route.countries }}
+                    </span>
+                    <span class="tb-tag tb-tag-adventure">
+                        <i class="far fa-calendar"></i> {{ route.start_date|date:"d M" }} — {{ route.end_date|date:"d M" }}
+                    </span>
+                    <span class="tb-tag tb-tag-popular">
+                        💰 {{ route.budget|default:"—" }} ₽
+                    </span>
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="mb-4">
+                    <h4 style="font-size: 18px; margin-bottom: 10px;">Об этом маршруте</h4>
+                    <p style="color: var(--tb-text-muted); line-height: 1.7;">{{ route.description|linebreaks }}</p>
+                </div>
+
+                <!-- INFO GRID -->
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-6">
+                        <div class="info-box">
+                            <h5><i class="fas fa-globe-europe text-primary"></i> Страны</h5>
+                            <p>{{ route.countries }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="info-box">
+                            <h5><i class="far fa-calendar-alt text-primary"></i> Даты</h5>
+                            <p>{{ route.start_date|date:"d.m.Y" }} — {{ route.end_date|date:"d.m.Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAP -->
+                <div class="mb-4">
+                    <h4 style="font-size: 18px; margin-bottom: 12px;">
+                        <i class="fas fa-map text-primary"></i> Карта маршрута
+                    </h4>
+
+                    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+                    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+                    <div id="routeMap" class="route-map"></div>
+
+                    <div id="routeInfo" class="mt-3" style="display: none;">
+                        <div class="alert alert-info">
+                            <strong>📊 Информация о маршруте:</strong>
+                            <span id="distanceInfo"></span>
+                            <span id="timeInfo"></span>
+                        </div>
+                    </div>
+
+                    <div id="mapError" class="alert alert-warning mt-3" style="display: none;">
+                        ⚠️ Не удалось загрузить карту. Проверьте подключение к интернету.
+                    </div>
+
+                    {% if route.waypoints %}
+                    <div class="mt-3">
+                        <strong>📌 Промежуточные точки:</strong>
+                        <ul class="mt-2">
+                            {% for point in route.waypoints.split %}
+                                <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="d-flex gap-2 flex-wrap mt-4 pt-3" style="border-top: 1px solid var(--tb-border);">
+                    {% if user == route.author %}
+                        <a href="{% url 'route_edit' route.id %}" class="btn btn-warning">
+                            <i class="fas fa-pen"></i> Редактировать
+                        </a>
+                        <a href="{% url 'route_delete' route.id %}" class="btn btn-danger" onclick="return confirm('Удалить маршрут?')">
+                            <i class="fas fa-trash"></i> Удалить
+                        </a>
+                    {% endif %}
+                    {% if user.is_authenticated and user != route.author %}
+                        <a href="{% url 'review_create' route.id route.author.id %}" class="btn btn-secondary">
+                            <i class="far fa-star"></i> Оставить отзыв
+                        </a>
+                    {% endif %}
+                    <a href="{% url 'chat_room' route.id %}" class="btn btn-info">
+                        <i class="fas fa-comments"></i> Чат маршрута
+                    </a>
+                    <a href="{% url 'route_participants' route.id %}" class="btn btn-secondary">
+                        <i class="fas fa-users"></i> Участники
+                    </a>
+                    <a href="{% url 'export_route_pdf' route.id %}" class="btn btn-secondary">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </a>
+                    <a href="{% url 'toggle_like' route.id %}" class="btn {% if request.user in route.likes.all %}btn-danger{% else %}btn-secondary{% endif %}">
+                        <i class="{% if request.user in route.likes.all %}fas{% else %}far{% endif %} fa-heart"></i> {{ route.likes.count }}
+                    </a>
+
+                    <div class="ms-auto d-flex align-items-center gap-2">
+                        <span class="text-muted" style="font-size: 13px;">Поделиться:</span>
+                        <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ route.title }}" target="_blank" class="tb-nav-icon-btn" title="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://vk.com/share.php?url={{ request.build_absolute_uri }}&title={{ route.title }}" target="_blank" class="tb-nav-icon-btn" title="VK">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://wa.me/?text={{ route.title }}%20{{ request.build_absolute_uri }}" target="_blank" class="tb-nav-icon-btn" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            {% endif %}
-            
-            <!-- КНОПКИ -->
-            <div class="d-flex gap-3 flex-wrap mt-4">
+        </div>
+
+        <!-- RECENTLY VIEWED -->
+        {% if recent_routes %}
+        <div class="mt-4">
+            <h4 style="font-size: 20px; margin-bottom: 14px;">Недавно просмотренные</h4>
+            <div class="row g-3">
+                {% for recent_route in recent_routes|slice:":4" %}
+                <div class="col-sm-6 col-md-3">
+                    <a href="{% url 'route_detail' recent_route.id %}" style="text-decoration: none; color: inherit;">
+                        <div class="card route-card h-100">
+                            {% if recent_route.image %}
+                                <img src="{{ recent_route.image.url }}" class="card-img-top" style="height: 110px;" alt="{{ recent_route.title }}">
+                            {% else %}
+                                <div class="card-img-top d-flex align-items-center justify-content-center" style="background: var(--tb-bg); height: 110px;">
+                                    <span style="font-size: 28px; opacity: 0.4;">🌄</span>
+                                </div>
+                            {% endif %}
+                            <div class="card-body" style="padding: 12px;">
+                                <h6 style="font-size: 13.5px; margin-bottom: 4px;">{{ recent_route.title|truncatechars:30 }}</h6>
+                                <small class="text-muted">{{ recent_route.budget }} ₽</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- RIGHT: Host card -->
+    <div class="col-lg-4">
+        <div class="card" style="position: sticky; top: 90px;">
+            <div class="card-body">
+                <div class="text-muted mb-2" style="font-size: 13px;">Организатор</div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    {% if route.author.avatar %}
+                        <img src="{{ route.author.avatar.url }}" alt="{{ route.author.username }}" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover;">
+                    {% else %}
+                        <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--tb-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 22px;">
+                            {{ route.author.username|make_list|first|upper }}
+                        </div>
+                    {% endif %}
+                    <div>
+                        <div style="font-weight: 600;">
+                            <a href="{% url 'profile' route.author.id %}" style="color: var(--tb-text);">{{ route.author.username }}</a>
+                        </div>
+                        <div class="text-muted" style="font-size: 13px;">
+                            <i class="fas fa-shield-check" style="color: var(--tb-teal);"></i> Проверенный
+                        </div>
+                        <div style="font-size: 13px; margin-top: 2px;">
+                            <span style="color: var(--tb-orange);">★</span>
+                            <strong>{{ route.author.rating|default:"5.0" }}</strong>
+                            <span class="text-muted">({{ reviews_count|default:"0" }} отзывов)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-muted">Свободные места</span>
+                    <strong>{{ route.responses_count|default:"0" }} / {{ route.max_spots|default:"6" }}</strong>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 pb-3" style="border-bottom: 1px solid var(--tb-border);">
+                    <span class="text-muted">Цена с человека</span>
+                    <strong style="font-size: 22px; color: var(--tb-primary);">{{ route.budget|default:"—" }} ₽</strong>
+                </div>
+
                 {% if user.is_authenticated and user != route.author %}
                     {% if user_response %}
-                        <div class="alert alert-info">
-                            Вы уже откликнулись. Статус: 
-                            {% if user_response.status == 'PENDING' %}⏳ Ожидание
+                        <div class="alert alert-info mb-2" style="font-size: 13px;">
+                            {% if user_response.status == 'PENDING' %}⏳ Ожидание ответа
                             {% elif user_response.status == 'ACCEPTED' %}✅ Принят
                             {% else %}❌ Отклонён{% endif %}
                         </div>
                     {% else %}
-                        <a href="{% url 'response_create' route.id %}" class="btn btn-success">✉️ Откликнуться</a>
+                        <a href="{% url 'response_create' route.id %}" class="btn btn-primary w-100 mb-2">
+                            Присоединиться к маршруту
+                        </a>
                     {% endif %}
+                    <a href="{% url 'private_chat' route.author.id %}" class="btn btn-secondary w-100">
+                        <i class="far fa-envelope"></i> Написать организатору
+                    </a>
+                {% elif not user.is_authenticated %}
+                    <a href="{% url 'login' %}" class="btn btn-primary w-100">Войти, чтобы присоединиться</a>
                 {% endif %}
-                
-                {% if user.is_authenticated and user != route.author %}
-                    <a href="{% url 'review_create' route.id route.author.id %}" class="btn btn-warning">⭐ Оставить отзыв</a>
-                {% endif %}
-                
-                {% if user == route.author %}
-                    <a href="{% url 'route_edit' route.id %}" class="btn btn-warning">✏️ Редактировать</a>
-                    <a href="{% url 'route_delete' route.id %}" class="btn btn-danger" onclick="return confirm('Удалить?')">🗑️ Удалить</a>
-                {% endif %}
-                
-                {% if user.is_authenticated and user != route.author %}
-                    {% if route in user.favorites.all %}
-                        <a href="{% url 'remove_from_favorites' route.id %}" class="btn btn-danger">❤️ Удалить из избранного</a>
-                    {% else %}
-                        <a href="{% url 'add_to_favorites' route.id %}" class="btn btn-outline-danger">🤍 В избранное</a>
-                    {% endif %}
-                {% endif %}
-                
-                <a href="{% url 'chat_room' route.id %}" class="btn btn-info">💬 Перейти в чат</a>
-                <a href="{% url 'export_route_pdf' route.id %}" class="btn btn-secondary">📄 Скачать PDF</a>
-                
-                <!-- Кнопка участников маршрута -->
-                <a href="{% url 'route_participants' route.id %}" class="btn btn-outline-info">👥 Участники маршрута</a>
-                
-                <!-- Кнопка лайка -->
-                <a href="{% url 'toggle_like' route.id %}" class="btn {% if request.user in route.likes.all %}btn-danger{% else %}btn-outline-danger{% endif %}">
-                    ❤️ {{ route.likes.count }} лайков
-                </a>
-                
-                <!-- КНОПКИ "ПОДЕЛИТЬСЯ" -->
-                <div class="ms-auto">
-                    <span class="me-2">📤 Поделиться:</span>
-                    <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ route.title }}" target="_blank" class="btn btn-info btn-sm">Telegram</a>
-                    <a href="https://vk.com/share.php?url={{ request.build_absolute_uri }}&title={{ route.title }}" target="_blank" class="btn btn-primary btn-sm">VK</a>
-                    <a href="https://wa.me/?text={{ route.title }}%20{{ request.build_absolute_uri }}" target="_blank" class="btn btn-success btn-sm">WhatsApp</a>
+
+                <div class="mt-3 pt-3" style="border-top: 1px solid var(--tb-border); font-size: 13px; color: var(--tb-text-muted);">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span><i class="fas fa-users"></i> Размер группы</span>
+                        <span>{{ route.max_spots|default:"4-6" }} человек</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span><i class="fas fa-bed"></i> Проживание</span>
+                        <span>Отели и хостелы</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span><i class="fas fa-train"></i> Транспорт</span>
+                        <span>Поезд и автобус</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span><i class="fas fa-running"></i> Уровень</span>
+                        <span>Средний</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        {% if user.is_authenticated and user != route.author %}
+        <div class="text-center mt-3">
+            <a href="{% url 'complain' route.author.id %}" class="text-muted" style="font-size: 12.5px;">
+                <i class="fas fa-flag"></i> Пожаловаться
+            </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 
-<style>
-    .info-box {
-        background: rgba(0, 0, 0, 0.03);
-        padding: 15px;
-        border-radius: 15px;
+<script>
+(function () {
+    var modelPoints = {{ map_points_json|safe }};
+    var geocodeNames = {{ geocode_names_json|safe }};
+
+    var demoPoints = [
+        { name: 'Бишкек', lat: 42.8746, lng: 74.5698 },
+        { name: 'Башня Бурана', lat: 42.7460, lng: 75.2510 },
+        { name: 'Чолпон-Ата', lat: 42.6500, lng: 77.0810 }
+    ];
+
+    var map = L.map('routeMap');
+    map.setView([41.20, 74.77], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    function coloredIcon(color) {
+        return new L.Icon({
+            iconUrl: 'https://cdn.jsdelivr.net/gh/pointhi/leaflet-color-markers@master/img/marker-icon-2x-' + color + '.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41], iconAnchor: [12, 41],
+            popupAnchor: [1, -34], shadowSize: [41, 41]
+        });
     }
-    .info-box h5 {
-        color: #667eea;
-        margin-bottom: 10px;
+    var greenIcon = coloredIcon('green');
+    var redIcon = coloredIcon('red');
+    var blueIcon = coloredIcon('blue');
+
+    function drawMarkers(points) {
+        points.forEach(function (p, index) {
+            var icon = blueIcon;
+            if (index === 0) icon = greenIcon;
+            else if (index === points.length - 1) icon = redIcon;
+            L.marker([p.lat, p.lng], { icon: icon })
+                .addTo(map)
+                .bindPopup('<b>' + (p.name || 'Точка') + '</b>');
+        });
     }
-</style>
+    function fitToPoints(points) {
+        if (points.length === 1) {
+            map.setView([points[0].lat, points[0].lng], 12);
+        } else if (points.length > 1) {
+            var bounds = L.latLngBounds(points.map(function (p) { return [p.lat, p.lng]; }));
+            map.fitBounds(bounds, { padding: [40, 40] });
+        }
+    }
+    function drawRoute(points) {
+        if (points.length < 2) {
+            if (points.length === 1) fitToPoints(points);
+            return;
+        }
+        var coordStr = points.map(function (p) { return p.lng + ',' + p.lat; }).join(';');
+        var url = 'https://router.project-osrm.org/route/v1/driving/' + coordStr + '?overview=full&geometries=geojson';
+        fetch(url)
+            .then(function (resp) { if (!resp.ok) throw new Error(); return resp.json(); })
+            .then(function (data) {
+                if (!data.routes || !data.routes.length) throw new Error();
+                var route = data.routes[0];
+                var latlngs = route.geometry.coordinates.map(function (c) { return [c[1], c[0]]; });
+                var line = L.polyline(latlngs, { color: '#2563EB', weight: 5, opacity: 0.85 }).addTo(map);
+                map.fitBounds(line.getBounds(), { padding: [40, 40] });
+
+                var distanceKm = (route.distance / 1000).toFixed(1);
+                var totalMin = Math.round(route.duration / 60);
+                var hours = Math.floor(totalMin / 60);
+                var minutes = totalMin % 60;
+
+                document.getElementById('routeInfo').style.display = 'block';
+                document.getElementById('distanceInfo').innerHTML = ' 📍 ' + distanceKm + ' км';
+                document.getElementById('timeInfo').innerHTML = ' ⏱️ ' + hours + ' ч ' + minutes + ' мин';
+            })
+            .catch(function () {
+                var latlngs = points.map(function (p) { return [p.lat, p.lng]; });
+                var line = L.polyline(latlngs, { color: '#2563EB', weight: 3, opacity: 0.7, dashArray: '8, 8' }).addTo(map);
+                map.fitBounds(line.getBounds(), { padding: [40, 40] });
+            });
+    }
+    function geocodeNamesToPoints(names) {
+        var requests = names.map(function (name) {
+            var url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(name);
+            return fetch(url, { headers: { 'Accept-Language': 'ru' } })
+                .then(function (r) { return r.json(); })
+                .then(function (arr) {
+                    if (arr && arr.length) return { name: name, lat: parseFloat(arr[0].lat), lng: parseFloat(arr[0].lon) };
+                    return null;
+                })
+                .catch(function () { return null; });
+        });
+        return Promise.all(requests).then(function (results) {
+            return results.filter(function (p) { return p !== null; });
+        });
+    }
+    try {
+        if (modelPoints && modelPoints.length) {
+            drawMarkers(modelPoints); drawRoute(modelPoints); fitToPoints(modelPoints);
+        } else if (geocodeNames && geocodeNames.length) {
+            geocodeNamesToPoints(geocodeNames).then(function (points) {
+                if (points.length) { drawMarkers(points); drawRoute(points); fitToPoints(points); }
+                else { drawMarkers(demoPoints); drawRoute(demoPoints); fitToPoints(demoPoints); }
+            });
+        } else {
+            drawMarkers(demoPoints); drawRoute(demoPoints); fitToPoints(demoPoints);
+        }
+    } catch (e) {
+        document.getElementById('mapError').style.display = 'block';
+    }
+})();
+</script>
+
 {% endblock %}

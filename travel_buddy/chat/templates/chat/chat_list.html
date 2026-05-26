@@ -1,38 +1,59 @@
 {% extends 'base.html' %}
 
-{% block title %}Мои чаты - Travel Buddy{% endblock %}
+{% block title %}Сообщения - Travel Buddy{% endblock %}
+
+{% block toasts %}{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="mb-4">💬 Мои чаты</h2>
-    
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+        <h1 style="font-size: 26px; margin: 0;">Сообщения</h1>
+        <div class="text-muted" style="font-size: 14px;">Общайся с попутчиками и организаторами</div>
+    </div>
     {% if chats %}
-        <div class="list-group">
-            {% for chat in chats %}
-                <a href="{% url 'private_chat' chat.user.id %}" class="list-group-item list-group-item-action">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            {% if chat.user.avatar %}
-                                <img src="{{ chat.user.avatar.url }}" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
-                            {% else %}
-                                <div class="rounded-circle bg-secondary text-white d-inline-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                    {{ chat.user.username|make_list|first|upper }}
-                                </div>
-                            {% endif %}
-                            <strong>{{ chat.user.username }}</strong>
-                            {% if chat.unread_count > 0 %}
-                                <span class="badge bg-danger rounded-pill ms-2">{{ chat.unread_count }}</span>
-                            {% endif %}
-                        </div>
-                        <small class="text-muted">{{ chat.last_message|truncatechars:30 }}</small>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    {% else %}
-        <div class="alert alert-info">
-            У вас пока нет чатов. Начните общение с авторами маршрутов!
-        </div>
+        <span class="badge bg-primary">{{ chats|length }} {% if chats|length == 1 %}диалог{% else %}диалогов{% endif %}</span>
     {% endif %}
+</div>
+
+<div class="card">
+    <div class="card-body" style="padding: 14px;">
+        {% if chats %}
+            <div class="chat-list">
+                {% for chat in chats %}
+                    <a href="{% url 'private_chat' chat.user.id %}" class="chat-list-item d-flex align-items-center gap-3">
+                        <div style="position: relative;">
+                            {% if chat.user.avatar %}
+                                <img src="{{ chat.user.avatar.url }}" class="chat-list-avatar" alt="{{ chat.user.username }}">
+                            {% else %}
+                                <div class="chat-list-avatar">{{ chat.user.username|make_list|first|upper }}</div>
+                            {% endif %}
+                            <span style="position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background: var(--tb-teal); border: 2px solid #fff; border-radius: 50%;"></span>
+                        </div>
+                        <div class="flex-grow-1" style="min-width: 0;">
+                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                <strong class="text-truncate" style="font-size: 14.5px;">{{ chat.user.username }}</strong>
+                                {% if chat.last_message_time %}
+                                    <small class="text-muted" style="white-space: nowrap;">{{ chat.last_message_time|date:"d.m H:i" }}</small>
+                                {% endif %}
+                            </div>
+                            <div class="chat-list-preview text-truncate">
+                                {{ chat.last_message|default:"Нет сообщений" }}
+                            </div>
+                        </div>
+                        {% if chat.unread_count > 0 %}
+                            <span class="badge bg-danger" style="min-width: 24px; height: 22px; display: inline-flex; align-items: center; justify-content: center;">{{ chat.unread_count }}</span>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="chat-empty py-5">
+                <div class="chat-empty-icon">💬</div>
+                <h5 style="margin-bottom: 4px;">У тебя пока нет чатов</h5>
+                <small>Найди маршрут и напиши организатору</small>
+                <a href="{% url 'home' %}" class="btn btn-primary mt-3">Найти маршрут</a>
+            </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

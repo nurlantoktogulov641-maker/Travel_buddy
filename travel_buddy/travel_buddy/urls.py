@@ -2,17 +2,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from users import views as users_views  # ← ДОБАВИТЬ
+from users import views as users_views
+from travel_buddy.views import admin_dashboard
 
 urlpatterns = [
+    path('admin/dashboard/', admin_dashboard, name='admin_dashboard'),
     path('admin/', admin.site.urls),
     path('', include('routes.urls')),
     path('users/', include('users.urls')),
     path('responses/', include('responses.urls')),
     path('reviews/', include('reviews.urls')),
     path('chat/', include('chat.urls')),
-    path('login/', users_views.user_login, name='login'),  # ← ИСПОЛЬЗУЕМ ВАШУ ФУНКЦИЮ
-    path('logout/', users_views.user_logout, name='logout'),  # ← ИСПОЛЬЗУЕМ ВАШУ ФУНКЦИЮ
+    path('login/', users_views.user_login, name='login'),
+    path('logout/', users_views.user_logout, name='logout'),
     path('complaints/', include('complaints.urls')),
 ]
 

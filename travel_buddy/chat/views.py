@@ -8,6 +8,19 @@ from routes.models import Route
 from responses.models import Response
 from travel_buddy.utils import log_action, send_notification
 from django.http import JsonResponse
+from django.utils import timezone
+
+
+def _message_payload(message, is_self):
+    """Сериализует сообщение для AJAX-ответа (без перезагрузки страницы)."""
+    local = timezone.localtime(message.created_at)
+    return {
+        'text': message.text,
+        'sender': message.sender.username,
+        'created_at': local.strftime('%H:%M'),
+        'created_at_full': local.strftime('%d.%m.%Y %H:%M'),
+        'is_self': is_self,
+    }
 
 
 @login_required
@@ -32,43 +45,51 @@ def chat_room(request, route_id):
         messages.warning(request, 'У вас нет доступа к этому чату')
         return redirect('route_detail', route_id=route.id)
     
+    is_ajax = request.headers.get('x-requested-with') == 'XMLHttpRequest'
+
     if request.method == 'POST':
-        text = request.POST.get('text')
-        if text:
-            message = Message.objects.create(
-                route=route,
-                sender=request.user,
-                text=text
+        text = (request.POST.get('text') or '').strip()
+        if not text:
+            if is_ajax:
+                return JsonResponse({'status': 'empty'}, status=400)
+            return redirect('chat_room', route_id=route.id)
+
+        message = Message.objects.create(
+            route=route,
+            sender=request.user,
+            text=text
+        )
+
+        # ===== УВЕДОМЛЕНИЯ ВСЕМ УЧАСТНИКАМ (кроме отправителя) =====
+
+        # Собираем получателей: автор маршрута
+        recipients_emails = []
+        if route.author != request.user and route.author.email:
+            recipients_emails.append(route.author.email)
+
+        # Добавляем участников с принятым откликом
+        accepted_responses = Response.objects.filter(route=route, status='ACCEPTED')
+        for resp in accepted_responses:
+            if resp.user != request.user and resp.user.email:
+                recipients_emails.append(resp.user.email)
+
+        # Убираем дубликаты
+        recipients_emails = list(set(recipients_emails))
+
+        # Отправляем уведомления
+        for email in recipients_emails:
+            send_notification(
+                email,
+                f'Новое сообщение в чате маршрута "{route.title}"',
+                f'Здравствуйте!\n\n'
+                f'Пользователь {request.user.username} отправил сообщение в чате маршрута "{route.title}":\n\n'
+                f'"{text[:200]}{"..." if len(text) > 200 else ""}"\n\n'
+                f'🔗 Перейти в чат: http://127.0.0.1:8000/chat/{route.id}/\n\n'
+                f'---\nС уважением, команда Travel Buddy'
             )
-            
-            # ===== УВЕДОМЛЕНИЯ ВСЕМ УЧАСТНИКАМ (кроме отправителя) =====
-            
-            # Собираем получателей: автор маршрута
-            recipients_emails = []
-            if route.author != request.user and route.author.email:
-                recipients_emails.append(route.author.email)
-            
-            # Добавляем участников с принятым откликом
-            accepted_responses = Response.objects.filter(route=route, status='ACCEPTED')
-            for resp in accepted_responses:
-                if resp.user != request.user and resp.user.email:
-                    recipients_emails.append(resp.user.email)
-            
-            # Убираем дубликаты
-            recipients_emails = list(set(recipients_emails))
-            
-            # Отправляем уведомления
-            for email in recipients_emails:
-                send_notification(
-                    email,
-                    f'Новое сообщение в чате маршрута "{route.title}"',
-                    f'Здравствуйте!\n\n'
-                    f'Пользователь {request.user.username} отправил сообщение в чате маршрута "{route.title}":\n\n'
-                    f'"{text[:200]}{"..." if len(text) > 200 else ""}"\n\n'
-                    f'🔗 Перейти в чат: http://127.0.0.1:8000/chat/{route.id}/\n\n'
-                    f'---\nС уважением, команда Travel Buddy'
-                )
-            
+
+        if is_ajax:
+            return JsonResponse({'status': 'ok', 'message': _message_payload(message, True)})
         return redirect('chat_room', route_id=route.id)
     
     messages_list = Message.objects.filter(route=route).order_by('created_at')
@@ -104,31 +125,40 @@ def private_chat(request, user_id):
     ).order_by('created_at')
     
     messages_list.filter(receiver=request.user, is_read=False).update(is_read=True)
-    
+
+    is_ajax = request.headers.get('x-requested-with') == 'XMLHttpRequest'
+
     if request.method == 'POST':
-        text = request.POST.get('text')
-        if text:
-            message = PrivateMessage.objects.create(
-                sender=request.user,
-                receiver=receiver,
-                text=text
-            )
-            
-            # ===== УВЕДОМЛЕНИЕ ПОЛУЧАТЕЛЮ О ЛИЧНОМ СООБЩЕНИИ =====
-            if receiver.email:
-                send_notification(
-                    receiver.email,
-                    f'Новое личное сообщение от {request.user.username}',
-                    f'Здравствуйте, {receiver.username}!\n\n'
-                    f'Пользователь {request.user.username} отправил вам личное сообщение:\n\n'
-                    f'"{text[:200]}{"..." if len(text) > 200 else ""}"\n\n'
-                    f'🔗 Перейти в чат: http://127.0.0.1:8000/chat/private/{user_id}/\n\n'
-                    f'---\nС уважением, команда Travel Buddy'
-                )
-            
-            messages.success(request, 'Сообщение отправлено!')
+        text = (request.POST.get('text') or '').strip()
+        if not text:
+            if is_ajax:
+                return JsonResponse({'status': 'empty'}, status=400)
             return redirect('private_chat', user_id=user_id)
-    
+
+        message = PrivateMessage.objects.create(
+            sender=request.user,
+            receiver=receiver,
+            text=text
+        )
+
+        # ===== УВЕДОМЛЕНИЕ ПОЛУЧАТЕЛЮ О ЛИЧНОМ СООБЩЕНИИ =====
+        if receiver.email:
+            send_notification(
+                receiver.email,
+                f'Новое личное сообщение от {request.user.username}',
+                f'Здравствуйте, {receiver.username}!\n\n'
+                f'Пользователь {request.user.username} отправил вам личное сообщение:\n\n'
+                f'"{text[:200]}{"..." if len(text) > 200 else ""}"\n\n'
+                f'🔗 Перейти в чат: http://127.0.0.1:8000/chat/private/{user_id}/\n\n'
+                f'---\nС уважением, команда Travel Buddy'
+            )
+
+        if is_ajax:
+            return JsonResponse({'status': 'ok', 'message': _message_payload(message, True)})
+
+        messages.success(request, 'Сообщение отправлено!')
+        return redirect('private_chat', user_id=user_id)
+
     return render(request, 'chat/private_chat.html', {
         'receiver': receiver,
         'messages': messages_list

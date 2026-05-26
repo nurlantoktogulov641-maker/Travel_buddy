@@ -1,43 +1,57 @@
 {% extends 'base.html' %}
 
 {% block title %}Вход - Travel Buddy{% endblock %}
+{% block toasts %}{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-4">
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 col-lg-4">
         <div class="card">
-            <div class="card-header text-center">
-                <h3 class="mb-0">🔑 Вход</h3>
-            </div>
-            <div class="card-body">
+            <div class="card-body" style="padding: 32px;">
+                <div class="text-center mb-4">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: var(--tb-primary-soft); color: var(--tb-primary); font-size: 24px;">
+                        <i class="fas fa-mountain"></i>
+                    </span>
+                    <h2 style="font-size: 22px; margin-top: 14px;">С возвращением</h2>
+                    <p class="text-muted" style="font-size: 14px;">Войди и продолжай путешествие</p>
+                </div>
+
                 <form method="post">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label class="form-label">Имя пользователя</label>
                         <input type="text" name="username" class="form-control" placeholder="Введите имя" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label class="form-label">Пароль</label>
-                        <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
+                        <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="text-end mb-3">
+                        <a href="{% url 'password_reset' %}" style="font-size: 13px;">Забыли пароль?</a>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Войти</button>
-                    <div class="text-center mt-2">
-                        <a href="{% url 'password_reset' %}">Забыли пароль?</a>
-                    </div>
                 </form>
-                <hr>
-                <p class="text-center mb-0">Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
-                
-                <!-- Кнопки входа через соцсети -->
-                <hr>
-                <div class="text-center">
-                    <p class="mb-2">Или войдите через:</p>
-                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                        <a href="/accounts/google/login/" class="btn btn-outline-danger">Google</a>
-                        <a href="/accounts/vk/login/" class="btn btn-outline-primary">VK</a>
-                        <a href="/accounts/telegram/login/" class="btn btn-outline-info">Telegram</a>
-                    </div>
+
+                <div class="text-center my-4" style="position: relative;">
+                    <hr style="border-color: var(--tb-border);">
+                    <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; padding: 0 12px; color: var(--tb-text-muted); font-size: 12.5px;">или войти через</span>
                 </div>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="/accounts/google/login/" class="btn btn-secondary flex-grow-1">
+                        <i class="fab fa-google" style="color: #EA4335;"></i> Google
+                    </a>
+                    <a href="/accounts/vk/login/" class="btn btn-secondary flex-grow-1">
+                        <i class="fab fa-vk" style="color: #4680C2;"></i> VK
+                    </a>
+                    <a href="/accounts/telegram/login/" class="btn btn-secondary flex-grow-1">
+                        <i class="fab fa-telegram" style="color: #229ED9;"></i> Telegram
+                    </a>
+                </div>
+
+                <p class="text-center mt-4 mb-0 text-muted" style="font-size: 14px;">
+                    Нет аккаунта? <a href="{% url 'register' %}" style="font-weight: 600;">Зарегистрироваться</a>
+                </p>
             </div>
         </div>
     </div>
